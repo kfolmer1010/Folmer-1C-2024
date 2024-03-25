@@ -42,7 +42,8 @@ void  convertToBcdArray (uint32_t data, uint8_t digits, uint8_t * bcd_number)
 {
 	for(int i=digits-1; i>=0; i--)
     {
-        bcd_number[i] = data % 10;
+        bcd_number[i] =  data % 10; //guardo el 6 en el arreglo
+        data/=10;//divido x10 para obtener 45 y seguir recorriendo el array
     }
 }
 /*==================[external functions definition]==========================*/
