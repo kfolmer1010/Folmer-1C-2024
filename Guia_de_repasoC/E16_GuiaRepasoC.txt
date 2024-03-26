@@ -1,0 +1,62 @@
+/*a)Declare una variable sin signo de 32 bits y cargue el valor 0x01020304. 
+Declare cuatro variables sin signo de 8 bits y, utilizando máscaras, rotaciones y truncamiento, 
+cargue cada uno de los bytes de la variable de 32 bits.
+*/
+
+int main() 
+{
+    uint32_t var32 = 0x01020304; // que en binario es 00000001 00000010 00000011 00000100
+    uint8_t byte_1, byte_2, byte_3, byte_4;
+
+    printf("var32: %u\n", var32);
+
+    byte_1 = (var32 >> 24) & 0xff;
+    byte_2 = (var32 >> 16) & 0xff;
+    byte_3 = (var32 >> 8) & 0xff;
+    byte_4 = var32 & 0xff;
+    
+    printf("Byte 1: %x\n", byte_1);
+    printf("Byte 2: %x\n", byte_2);
+    printf("Byte 3: %x\n", byte_3);
+    printf("Byte 4: %x\n", byte_4);
+   
+return 0;
+}
+
+/*
+b) Realice el mismo ejercicio, utilizando la definición de una “union”.
+*/
+
+#include <stdio.h>
+#include <stdint.h>
+
+typedef union bytes{
+  uint32_t valor32;
+  uint8_t bytes[4];
+};
+
+
+int main() 
+{
+   uint32_t var32 = 0x01020304; // que en binario es 00000001 00000010 00000011 00000100
+   uint8_t byte_1, byte_2, byte_3, byte_4;
+
+   printf("var32: %u\n", var32);
+
+   byte_1 = (var32 >> 24) & 0xff;
+   byte_2 = (var32 >> 16) & 0xff;
+   byte_3 = (var32 >> 8) & 0xff;
+   byte_4 = var32 & 0xff;
+   
+  
+   union bytes union_data;
+
+   union_data.valor32 = 0x01020304;
+
+   printf("Byte 1: %x\n", union_data.bytes[3]);
+   printf("Byte 2: %x\n", union_data.bytes[2]);
+   printf("Byte 3: %x\n", union_data.bytes[1]);
+   printf("Byte 4: %x\n", union_data.bytes[0]);
+
+   return 0;
+}

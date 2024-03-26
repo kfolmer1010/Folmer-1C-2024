@@ -1,0 +1,27 @@
+/*
+Sobre una constante de 32 bits previamente declarada, 
+verifique si el bit 4 es 0. Si es 0, cargue una variable “A” previamente declarada en 0, 
+si es 1, cargue “A” con 0xaa. Para la resolución de la lógica, siga el diagrama de flujo siguiente:
+*/
+
+#include <stdio.h>
+#include <stdint.h>
+
+int main() 
+{
+    const uint32_t constante = 0x0000;
+    uint32_t A = 0;
+
+    if (constante & (1<<4)==0) // 
+    {
+        A = 0;
+    }
+    else //
+    {
+        A = 0xaa;
+    }
+
+    printf("A= %u\n", A);
+return 0;
+}
+

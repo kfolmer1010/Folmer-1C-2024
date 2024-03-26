@@ -1,0 +1,42 @@
+/*
+Declare una estructura “alumno”, con los campos “nombre” de 12 caracteres, “apellido” de 20 caracteres y edad. 
+Defina una variable con esa estructura y cargue los campos con sus propios datos.
+Defina un puntero a esa estructura y cargue los campos con los datos de su compañero (usando acceso por punteros).
+*/
+
+#include <stdio.h>
+#include <stdint.h>
+#include <string.h>
+
+typedef struct alumno{
+    char nombre[12];
+    char apellido[20];
+    int edad;
+} datos_alumno;
+
+int main() 
+{
+    struct alumno datos = {"Karen", "Folmer", 23};
+    struct alumno *ptro_alumno;
+    
+    
+    //Imprimo mis datos
+    printf("Mis datos:\n");
+    printf("Nombre: %s\n", datos.nombre);
+    printf("Apellido: %s\n", datos.apellido);
+    printf("Edad: %d\n", datos.edad);
+   
+    ptro_alumno = &datos;
+    //Cargo el puntero con los datos de una compañera
+    strcpy(ptro_alumno->nombre, "Natasha");
+    strcpy(ptro_alumno->apellido, "Venacio");
+    ptro_alumno->edad = 23;
+    
+    //Imprimo los datos de mi compañera
+    printf("\nDatos de mi compañera:\n");
+    printf("Nombre: %s\n", ptro_alumno->nombre);
+    printf("Apellido: %s\n", ptro_alumno->apellido);
+    printf("Edad: %d\n", ptro_alumno->edad);
+    
+    return 0;
+}
