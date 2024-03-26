@@ -64,8 +64,6 @@ void ControlLeds(struct leds *leds_ptr)
 		
 		break;
 	
-	// default:
-	// 	break;
 	case OFF:
 		if(leds_ptr->n_led == LED_1)
 				LedOff(LED_1);
@@ -75,9 +73,6 @@ void ControlLeds(struct leds *leds_ptr)
 				LedOff(LED_3);
 		
 		break;
-	
-	// default:
-	// 	break;
 
 	case TOGGLE:
 		for(int i=0; i<leds_ptr->n_ciclos; i++){
@@ -91,11 +86,11 @@ void ControlLeds(struct leds *leds_ptr)
 						vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
 
 			}
-		}		
-			
+		}			
 		break;
 	}
 }
+
 
 void app_main(void){
 	LedsInit();
