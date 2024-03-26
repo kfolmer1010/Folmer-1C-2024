@@ -3,6 +3,9 @@ Declare cuatro variables sin signo de 8 bits y, utilizando máscaras, rotaciones
 cargue cada uno de los bytes de la variable de 32 bits.
 */
 
+#include <stdio.h>
+#include <stdint.h>
+
 int main() 
 {
     uint32_t var32 = 0x01020304; // que en binario es 00000001 00000010 00000011 00000100
@@ -23,6 +26,7 @@ int main()
 return 0;
 }
 
+
 /*
 b) Realice el mismo ejercicio, utilizando la definición de una “union”.
 */
@@ -33,8 +37,7 @@ b) Realice el mismo ejercicio, utilizando la definición de una “union”.
 typedef union bytes{
   uint32_t valor32;
   uint8_t bytes[4];
-};
-
+}data;
 
 int main() 
 {
