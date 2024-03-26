@@ -1,10 +1,11 @@
-/*! @mainpage Template
+/*! @mainpage Guia_1_EJ6
  *
  * @section genDesc General Description
- *
- * This section describes how the program works.
- *
- * <a href="https://drive.google.com/...">Operation Example</a>
+ *Este programa consta basicamente de una función, mostrarEnDisplay, que recibe un dato de 32 bits,  
+ *la cantidad de dígitos de salida en el display y dos vectores de estructuras del tipo  gpioConf_t. 
+ *Uno  de estos vectores mapea los bits y el otro los puertos con el dígito del LCD a donde mostrar un dato.
+ *El programa muestra por el display el valor que recibe mostrarEnDisplay.
+ * 
  *
  * @section hardConn Hardware Connection
  *
@@ -17,9 +18,9 @@
  *
  * |   Date	    | Description                                    |
  * |:----------:|:-----------------------------------------------|
- * | 12/09/2023 | Document creation		                         |
+ * | 21/03/2023 | Document creation		                         |
  *
- * @author Albano Peñalva (albano.penalva@uner.edu.ar)
+ * @author Karen Folmer (karenfolmer@hotmail.com)
  *
  */
 
@@ -29,26 +30,56 @@
 #include "gpio_mcu.h"
 
 /*==================[macros and definitions]=================================*/
+/**@def CANT_DIGITS
+ * @brief Cantidad de digitos que tendra el numero a mostrar por el display.
+*/
 #define CANT_DIGITS 3
+
+/*Arreglo que almacena un numero, del tamaño de la cantidad de digitos del mismo.*/
 uint8_t arreglo[CANT_DIGITS]; 
 
+/*Arreglo que mapea los GPIO de los bits.*/
+gpioConf_t vector_pines[4]={{GPIO_20,GPIO_OUTPUT}, 
+						{GPIO_21,GPIO_OUTPUT}, 
+						{GPIO_22,GPIO_OUTPUT}, 
+						{GPIO_23,GPIO_OUTPUT}};
+
+/*Arreglo que mapea los GPIO de los puertos*/						
+gpioConf_t vector_puertos[3]={{GPIO_19,GPIO_OUTPUT}, 
+						{GPIO_18,GPIO_OUTPUT}, 
+						{GPIO_9,GPIO_OUTPUT}};			
+
 /*==================[internal data definition]===============================*/
+
+/*Struct que almacena el numero de pin del GPIO y dirección del mismo.
+*/
 typedef struct
 {
 	gpio_t pin;			/*!< GPIO pin number */
 	io_t dir;			/*!< GPIO direction '0' IN;  '1' OUT*/
 } gpioConf_t;
 
-gpioConf_t vector_pines[4]={{GPIO_20,GPIO_OUTPUT}, 
-						{GPIO_21,GPIO_OUTPUT}, 
-						{GPIO_22,GPIO_OUTPUT}, 
-						{GPIO_23,GPIO_OUTPUT}};
-						
-gpioConf_t vector_puertos[3]={{GPIO_19,GPIO_OUTPUT}, 
-						{GPIO_18,GPIO_OUTPUT}, 
-						{GPIO_9,GPIO_OUTPUT}};			
-/*==================[internal functions declaration]=========================*/
+/*==================[internal functions definition]==========================*/
+/**@fn void  convertToBcdArray (uint32_t data, uint8_t digits, uint8_t * bcd_number);
+ * @brief Convierte el dato recibido a BCD y guarda cada uno de los dígitos de salida en el arreglo pasado como puntero.
+ * @param[in] uint32_t data, uint8_t digits, uint8_t * bcd_number
+ * @return 
+*/
+void  convertToBcdArray (uint32_t data, uint8_t digits, uint8_t * bcd_number);
 
+/**@fn void functionBCD(uint8_t digit, gpioConf_t *vector);
+ * @brief Cambia el estado de cada GPIO, a ‘0’ o a ‘1’, según el estado del bit correspondiente en el BCD ingresado.
+ * @param[in] uint8_t digit, gpioConf_t *vector
+ * @return 
+*/
+void functionBCD(uint8_t digit, gpioConf_t *vector);
+
+/**@fn void mostrarEnDisplay(uint32_t data, uint8_t digits, gpioConf_t *vec_pines, gpioConf_t *vec_puertos);
+ * @brief Muestra por display el valor que recibe.
+ * @param[in] uint32_t data, uint8_t digits, gpioConf_t *vec_pines, gpioConf_t *vec_puertos
+ * @return 
+*/
+void mostrarEnDisplay(uint32_t data, uint8_t digits, gpioConf_t *vec_pines, gpioConf_t *vec_puertos);
 
 /*==================[external functions definition]==========================*/
 void  convertToBcdArray (uint32_t data, uint8_t digits, uint8_t * bcd_number)
