@@ -20,6 +20,5 @@ int main() {
   
     // Imprimo la variable var
     printf("var modificada: %u\n", var);
-
 return 0;
 }
