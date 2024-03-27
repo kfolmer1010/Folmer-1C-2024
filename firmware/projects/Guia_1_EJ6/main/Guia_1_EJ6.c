@@ -38,6 +38,14 @@
 /*Arreglo que almacena un numero, del tamaño de la cantidad de digitos del mismo.*/
 uint8_t arreglo[CANT_DIGITS]; 
 
+/*==================[internal data definition]===============================*/
+/*Struct que almacena el numero de pin del GPIO y dirección del mismo.*/
+typedef struct
+{
+	gpio_t pin;			/*!< GPIO pin number */
+	io_t dir;			/*!< GPIO direction '0' IN;  '1' OUT*/
+} gpioConf_t;
+
 /*Arreglo que mapea los GPIO de los bits.*/
 gpioConf_t vector_pines[4]={{GPIO_20,GPIO_OUTPUT}, 
 						{GPIO_21,GPIO_OUTPUT}, 
@@ -48,16 +56,6 @@ gpioConf_t vector_pines[4]={{GPIO_20,GPIO_OUTPUT},
 gpioConf_t vector_puertos[3]={{GPIO_19,GPIO_OUTPUT}, 
 						{GPIO_18,GPIO_OUTPUT}, 
 						{GPIO_9,GPIO_OUTPUT}};			
-
-/*==================[internal data definition]===============================*/
-
-/*Struct que almacena el numero de pin del GPIO y dirección del mismo.
-*/
-typedef struct
-{
-	gpio_t pin;			/*!< GPIO pin number */
-	io_t dir;			/*!< GPIO direction '0' IN;  '1' OUT*/
-} gpioConf_t;
 
 /*==================[internal functions definition]==========================*/
 /**@fn void  convertToBcdArray (uint32_t data, uint8_t digits, uint8_t * bcd_number);
