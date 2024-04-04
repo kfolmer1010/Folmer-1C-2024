@@ -64,7 +64,7 @@ var NAVTREEINDEX =
 "group___m_p_u6050.html#ga586636fe3f41146a694df05436aaabf3",
 "group___m_p_u6050.html#gacc6ee2095cc376b987626c8ecdb82952",
 "ili9341_8c.html#a27a2a53c2b01e4dd42e91cddecc41442",
-"ws2812b_8c.html#aa9331d068b87e6429728b37d83e3d798"
+"ws2812b_8c.html#a8bafab9eba59f18ef73103a6ec526585"
 ];
 
 var SYNCONMSG = 'pulsar para deshabilitar sincronización';
