@@ -23,6 +23,7 @@
  *
  */
 
+
 /*==================[inclusions]=============================================*/
 #include <stdbool.h>
 #include "freertos/FreeRTOS.h"
@@ -42,31 +43,29 @@ void app_main(void){
      	teclas  = SwitchesRead();
      	switch(teclas){
      		case SWITCH_1:
-				printf("LED ON\n");
 				LedOn(LED_1);
 				vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
-				printf("LED OFF\n");
 				LedOff(LED_1);
-     		break;
+				vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
+    		break;
      		
 			case SWITCH_2:
-				printf("LED ON\n");
 				LedOn(LED_2);
 				vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
-				printf("LED OFF\n");
 				LedOff(LED_2);
+				vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
      		break;
 
 			case SWITCH_1 | SWITCH_2: //SWITCH_1 or SWITCH_2
-				LedToggle(LED_3);//cambia el estado del led
+				LedOn(LED_3);
+				vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
+				LedOff(LED_3);
+				vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);			
 			break;
-
      	}
 
- 		vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
 	}
 }
-
 
 
 /*==================[end of file]============================================*/
