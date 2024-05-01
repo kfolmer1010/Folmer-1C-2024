@@ -39,36 +39,77 @@
 #include "switch.h"
 
 /*==================[macros and definitions]=================================*/
+/**La variable d almacena el valor que mide de distancia.*/
 uint16_t d;
-uint16_t teclas;
+
+/**Si es TRUE prende el display, si es FALSE lo apaga.*/
 bool on;
+
+/**Si es TRUE congela el valor que se muestra por display.*/
 bool hold; 
+
+
 #define CONFIG_BLINK_PERIOD 1000
 #define CONFIG_BLINK_PERIOD_TECLAS 200
 
 /*==================[internal data definition]===============================*/
 
 /*==================[internal functions declaration]=========================*/
+/**
+ * @fn void mostrarDistancia();
+ * @brief Escribe en d lo que sensa y lo muestra por display.
+ * @param[in] 
+ * @return 
+*/
+void MostrarDistancia();
 
+/**
+ * @fn void actualizarLed();
+ * @brief Se encarga de prender o apagar los leds dependiendo que distancia este midiendo el sensor.
+ * @param[in] 
+ * @return 
+*/
+void ActualizarLed();
+
+/**
+ * @fn void ActualizarDisplay();
+ * @brief Escribe el valor que se ve por display.
+ * @param[in]
+ * @return
+*/
+void ActualizarDisplay();
+
+/**
+ * @fn void LeerTeclas();
+ * @brief Determina las acciones a realizar si se apreta una tecla u otra.
+ * @param[in]
+ * @return
+*/
+void LeerTeclas();
+
+/**
+ * @fn void Visualizar();
+ * @brief Si ON es TRUE permite visualizar por display los valores que mide el sensor.
+ * @param[in]
+ * @return
+*/
+void Visualizar();
 /*==================[external functions definition]==========================*/
-void medirDistancia(){
-	HcSr04Init(GPIO_3, GPIO_2);
-	if(on){
-		d=HcSr04ReadDistanceInCentimeters();
-		vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
-	}
-	else if(on==false){
-		LedOff(LED_1);
-		LedOff(LED_2);
-		LedOff(LED_3);
-		LcdItsE0803Off();
+void MostrarDistancia(){
+	while (1){
+		if(on==true){
+			d=HcSr04ReadDistanceInCentimeters();
+		}
+		else if(on==false){
+			LedsOffAll();
+			//LcdItsE0803Off();
+		}
+		Visualizar();
 		vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
 	}
 } 
 
-void actualizarLed(){
-	medirDistancia();
-	LedsInit();
+void ActualizarLed(){
 	if(d<=10){
 		LedOff(LED_1);
 		LedOff(LED_2);
@@ -91,51 +132,47 @@ void actualizarLed(){
 	}
 }
 
-void actualizarDisplay(){
-	LcdItsE0803Init();
+void ActualizarDisplay(){
 	LcdItsE0803Write(d);
-	vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
 }
 
-void leerTeclas(){
-	SwitchesInit();
+void LeerTeclas(){
 	while(1){
      	teclas  = SwitchesRead();
      	switch(teclas){
      		case SWITCH_1:
 				on = !on;
-				vTaskDelay(CONFIG_BLINK_PERIOD_TECLAS / portTICK_PERIOD_MS);
 			break;
-			
 			case SWITCH_2:
 				hold = !hold;
-				vTaskDelay(CONFIG_BLINK_PERIOD_TECLAS / portTICK_PERIOD_MS);
 			break;
 		}
+		vTaskDelay(CONFIG_BLINK_PERIOD_TECLAS / portTICK_PERIOD_MS);
 	}
 }
 
-void visualizar(){
+void Visualizar(){
 	if(on==true){
-		actualizarLed();
+		ActualizarLed();
 		if(hold==true){
-			vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
 		}
 		else if(hold==false){
-			actualizarDisplay();
+			ActualizarDisplay();
 		}
 	}
 	else if(on==false){
-		LedOff(LED_1);
-		LedOff(LED_2);
-		LedOff(LED_3);
+		LedsOffAll();
 		LcdItsE0803Off();
-		vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
 	}
 }
 
 void app_main(void){
-	
-	
+	HcSr04Init(GPIO_3, GPIO_2);
+	LedsInit();
+	LedsOffAll();
+	SwitchesInit();
+	LcdItsE0803Init();
+	xTaskCreate(&LeerTeclas, "teclas_task",512, NULL,5,NULL);
+	xTaskCreate(&MostrarDistancia, "distancia_task",512, NULL,5,NULL);
 }
 /*==================[end of file]============================================*/
