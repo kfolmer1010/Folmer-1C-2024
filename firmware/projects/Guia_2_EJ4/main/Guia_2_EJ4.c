@@ -1,8 +1,9 @@
-/*! @mainpage Guia_2_EJ1
+/*! @mainpage Guia_2_EJ4
  *
  * @section genDesc General Description
- *
- * This section describes how the program works.
+ *Primero digitaliza una señal analógica y la transmite a un graficador de puerto serie de la PC. Despues se convierte una señal digital de un 
+ *ECG en una señal analógica para visualizarla utilizando el osciloscopio.
+ * 
  *
  * <a href="https://drive.google.com/...">Operation Example</a>
  *
@@ -14,7 +15,7 @@
  *
  * |   Date	    | Description                                    |
  * |:----------:|:-----------------------------------------------|
- * | 25/04/2023 | Document creation		                         |
+ * | 25/04/2024 | Document creation		                         |
  *
  * @author Karen Folmer (karenfolmer@hotmail.com)
  *
@@ -34,10 +35,10 @@
 #include "uart_mcu.h"
 #include "analog_io_mcu.h"
 /*==================[macros and definitions]=================================*/
-/**Defino el periodo de interrupcion.*/
+/**Defino el periodo al que se va a convertir la señal analogica a digital.*/
 #define CONFIG_BLINK_PERIOD 2000
 
-/**Defino cada cuanto quiero escribir lo que la data que recibo por CH1.*/
+/**Defino cada cuanto quiero mandar la data que recibo por CH.*/
 #define CONFIG_BLINK_PERIOD_MUESTRAS 4329//1/231
 
 TaskHandle_t convadc_task_handle = NULL;
@@ -46,9 +47,10 @@ TaskHandle_t medir_task_handle = NULL;
 /**Defino el tamaño de la muestra*/
 #define BUFFER_SIZE 231
 
-/**Guarda los datos que leo en CH1.*/
+/**Guarda los datos que leo en el CH.*/
 uint16_t data;
 
+int i = 0;
 /*==================[internal data definition]===============================*/
 /**Es un arreglo que guarda los datos del ecg.*/
 const char ecg[BUFFER_SIZE] = {
@@ -81,7 +83,7 @@ void FuncTimer(void* param);
 
 /**
  * @fn static void ConvADCTask(void *pvParameter)
- * @brief Lee el dato que esta en CH1 y lo convierte a ASCII
+ * @brief Lee el dato que esta en el canal y lo convierte a ASCII
  * @param[in] void *pvParameter
  * @return 
 */
@@ -89,7 +91,7 @@ static void ConvADCTask(void *pvParameter);
 
 /**
  * @fn static void FuncTimer(void *pvParameter);
- * @brief Notifica cada tarea cuando debe ser interrumpida.
+ * @brief Escribe la muestra del ecg cada un determinado periodo.
  * @param[in] void *pvParameter
  * @return 
 */
@@ -128,7 +130,7 @@ void app_main(void){
 		.sample_frec = 0
 	};
 	AnalogInputInit(&analog);
-
+	AnalogOutputInit();
 	timer_config_t timer_1 = {
 			.timer = TIMER_A,
 			.period = CONFIG_BLINK_PERIOD,
@@ -155,7 +157,6 @@ void app_main(void){
 
 	xTaskCreate(&ConvADCTask, "convADC", 512, NULL, 4, &convadc_task_handle);
 	TimerStart(timer_1.timer);
-	TimerStart(timer_2.timer);
-	
+	TimerStart(timer_2.timer);	
 }
 /*==================[end of file]============================================*/
