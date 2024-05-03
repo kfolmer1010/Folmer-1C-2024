@@ -1,0 +1,720 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>EJ3_Guia2_Folmer1C2024: Referencia del archivo C:/Users/Karu/Repositorios/Folmer-1C-2024/firmware/projects/Guia_2_EJ3/main/Guia_2_EJ3.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="fiuner.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">EJ3_Guia2_Folmer1C2024<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Muestra por un terminal de la pc lo que esta midiendo el sensor.</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_guia__2___e_j3_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">defines</a> &#124;
+<a href="#func-members">Funciones</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle"><div class="title">Referencia del archivo Guia_2_EJ3.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="hc__sr04_8h_source.html">hc_sr04.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lcditse0803_8h_source.html">lcditse0803.h</a>&quot;</code><br />
+<code>#include &lt;<a class="el" href="led_8h_source.html">led.h</a>&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &quot;freertos/FreeRTOS.h&quot;</code><br />
+<code>#include &quot;freertos/task.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="switch_8h_source.html">switch.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="timer__mcu_8h_source.html">timer_mcu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="uart__mcu_8h_source.html">uart_mcu.h</a>&quot;</code><br />
+</div>
+<p><a href="_guia__2___e_j3_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a3df1b4cad09974bfc68858fad7cdc054" id="r_a3df1b4cad09974bfc68858fad7cdc054"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3df1b4cad09974bfc68858fad7cdc054">CONFIG_BLINK_PERIOD</a>&#160;&#160;&#160;500000</td></tr>
+<tr class="separator:a3df1b4cad09974bfc68858fad7cdc054"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:ad9278972624167025b4b2910afc9765e" id="r_ad9278972624167025b4b2910afc9765e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9278972624167025b4b2910afc9765e">FuncTimer</a> (void *param)</td></tr>
+<tr class="memdesc:ad9278972624167025b4b2910afc9765e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifica cada tarea cuando debe ser interrumpida.  <br /></td></tr>
+<tr class="separator:ad9278972624167025b4b2910afc9765e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a877af9a16aaea9e4c38d9bd8276d2c9b" id="r_a877af9a16aaea9e4c38d9bd8276d2c9b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a877af9a16aaea9e4c38d9bd8276d2c9b">MedirTask</a> (void *pvParameter)</td></tr>
+<tr class="memdesc:a877af9a16aaea9e4c38d9bd8276d2c9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tarea para medir la distancia con el sensor, la guarda en centimetros en una variable.  <br /></td></tr>
+<tr class="separator:a877af9a16aaea9e4c38d9bd8276d2c9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5761bafaf553466f4242d7dfa4b138d0" id="r_a5761bafaf553466f4242d7dfa4b138d0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5761bafaf553466f4242d7dfa4b138d0">LedsTask</a> (void *pvParameter)</td></tr>
+<tr class="memdesc:a5761bafaf553466f4242d7dfa4b138d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tarea para prender o apagar los leds dependiendo que distancia estè midiendo el sensor.  <br /></td></tr>
+<tr class="separator:a5761bafaf553466f4242d7dfa4b138d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a730d3623a47cb5d2867435231371f374" id="r_a730d3623a47cb5d2867435231371f374"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a730d3623a47cb5d2867435231371f374">DisplayTask</a> (void *pvParameter)</td></tr>
+<tr class="memdesc:a730d3623a47cb5d2867435231371f374"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tarea que escribe en el display las distancias que mide si está en ON, o apaga el display si esta !ON.  <br /></td></tr>
+<tr class="separator:a730d3623a47cb5d2867435231371f374"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a489b98844afc67234aebca9f6a22b712" id="r_a489b98844afc67234aebca9f6a22b712"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a489b98844afc67234aebca9f6a22b712">CambiarEstado</a> ()</td></tr>
+<tr class="memdesc:a489b98844afc67234aebca9f6a22b712"><td class="mdescLeft">&#160;</td><td class="mdescRight">Si le paso 'O' prende el display o lo apaga..  <br /></td></tr>
+<tr class="separator:a489b98844afc67234aebca9f6a22b712"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a076f555923cd9f68053c800969001e4b" id="r_a076f555923cd9f68053c800969001e4b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a076f555923cd9f68053c800969001e4b">Congelar</a> ()</td></tr>
+<tr class="memdesc:a076f555923cd9f68053c800969001e4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Si se pasa H por consola deja fijo ese valor que se ve por display, hasta que se vuelva a apretar H.  <br /></td></tr>
+<tr class="separator:a076f555923cd9f68053c800969001e4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad565f7fde870f0e599f06c4f93c7ad94" id="r_ad565f7fde870f0e599f06c4f93c7ad94"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad565f7fde870f0e599f06c4f93c7ad94">LeerPuerto</a> ()</td></tr>
+<tr class="memdesc:ad565f7fde870f0e599f06c4f93c7ad94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interpreta lo que recibe por consola y cambia el estado o congela el display.  <br /></td></tr>
+<tr class="separator:ad565f7fde870f0e599f06c4f93c7ad94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee537cfc1a0c6ba3f1444c45883b6236" id="r_aee537cfc1a0c6ba3f1444c45883b6236"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee537cfc1a0c6ba3f1444c45883b6236">EnviarDatos</a> ()</td></tr>
+<tr class="memdesc:aee537cfc1a0c6ba3f1444c45883b6236"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le pasa a UART los datos que quiero mostrar en el monitor.  <br /></td></tr>
+<tr class="separator:aee537cfc1a0c6ba3f1444c45883b6236"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fbc3f5cfe58e32b3d35600981b26323" id="r_a7fbc3f5cfe58e32b3d35600981b26323"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7fbc3f5cfe58e32b3d35600981b26323">MostrarTask</a> (void *pvParameter)</td></tr>
+<tr class="memdesc:a7fbc3f5cfe58e32b3d35600981b26323"><td class="mdescLeft">&#160;</td><td class="mdescRight">Es una tarea para mostrar por el monitor los datos que está sensando.  <br /></td></tr>
+<tr class="separator:a7fbc3f5cfe58e32b3d35600981b26323"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a630544a7f0a2cc40d8a7fefab7e2fe70" id="r_a630544a7f0a2cc40d8a7fefab7e2fe70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a630544a7f0a2cc40d8a7fefab7e2fe70">app_main</a> (void)</td></tr>
+<tr class="separator:a630544a7f0a2cc40d8a7fefab7e2fe70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:aaa0e9a03072c04ebe2d49f53bc7bc785" id="r_aaa0e9a03072c04ebe2d49f53bc7bc785"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa0e9a03072c04ebe2d49f53bc7bc785">d</a></td></tr>
+<tr class="separator:aaa0e9a03072c04ebe2d49f53bc7bc785"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa928c9a62449f7946da1e32f66c70d2" id="r_aaa928c9a62449f7946da1e32f66c70d2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa928c9a62449f7946da1e32f66c70d2">on</a></td></tr>
+<tr class="separator:aaa928c9a62449f7946da1e32f66c70d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0129e079b57e897edf00f22cc25f3d4" id="r_af0129e079b57e897edf00f22cc25f3d4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0129e079b57e897edf00f22cc25f3d4">hold</a></td></tr>
+<tr class="separator:af0129e079b57e897edf00f22cc25f3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b0cb40d7a31ce7e8b3f906fd55df312" id="r_a2b0cb40d7a31ce7e8b3f906fd55df312"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b0cb40d7a31ce7e8b3f906fd55df312">medir_task_handle</a> = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
+<tr class="separator:a2b0cb40d7a31ce7e8b3f906fd55df312"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23fa2e6a8b0cbaf464c822d101153441" id="r_a23fa2e6a8b0cbaf464c822d101153441"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23fa2e6a8b0cbaf464c822d101153441">leds_task_handle</a> = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
+<tr class="separator:a23fa2e6a8b0cbaf464c822d101153441"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abaf073dd4f91187228bc62d1177a72e4" id="r_abaf073dd4f91187228bc62d1177a72e4"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abaf073dd4f91187228bc62d1177a72e4">display_task_handle</a> = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
+<tr class="separator:abaf073dd4f91187228bc62d1177a72e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1316d5b1a3e4d9dee5085faf3b582e40" id="r_a1316d5b1a3e4d9dee5085faf3b582e40"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1316d5b1a3e4d9dee5085faf3b582e40">mostrar_task_handle</a> = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
+<tr class="separator:a1316d5b1a3e4d9dee5085faf3b582e40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentación de «define»</h2>
+<a id="a3df1b4cad09974bfc68858fad7cdc054" name="a3df1b4cad09974bfc68858fad7cdc054"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3df1b4cad09974bfc68858fad7cdc054">&#9670;&#160;</a></span>CONFIG_BLINK_PERIOD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_BLINK_PERIOD&#160;&#160;&#160;500000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Periodo al que quiero que se realicen las tareas. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_guia__2___e_j3_8c_source.html#l00086">86</a> del archivo <a class="el" href="_guia__2___e_j3_8c_source.html">Guia_2_EJ3.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_guia__2___e_j3_8c_source.html#l00268">app_main()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de funciones</h2>
+<a id="a630544a7f0a2cc40d8a7fefab7e2fe70" name="a630544a7f0a2cc40d8a7fefab7e2fe70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a630544a7f0a2cc40d8a7fefab7e2fe70">&#9670;&#160;</a></span>app_main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void app_main </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>creación de las tareas que quiero ejecutar</p>
+
+<p class="definition">Definición en la línea <a class="el" href="_guia__2___e_j3_8c_source.html#l00268">268</a> del archivo <a class="el" href="_guia__2___e_j3_8c_source.html">Guia_2_EJ3.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_guia__2___e_j3_8c_source.html#l00228">CambiarEstado()</a>, <a class="el" href="_guia__2___e_j3_8c_source.html#l00086">CONFIG_BLINK_PERIOD</a>, <a class="el" href="_guia__2___e_j3_8c_source.html#l00232">Congelar()</a>, <a class="el" href="_guia__2___e_j3_8c_source.html#l00090">display_task_handle</a>, <a class="el" href="_guia__2___e_j3_8c_source.html#l00214">DisplayTask()</a>, <a class="el" href="_guia__2___e_j3_8c_source.html#l00167">FuncTimer()</a>, <a class="el" href="gpio__mcu_8h_source.html#l00054">GPIO_2</a>, <a class="el" href="gpio__mcu_8h_source.html#l00055">GPIO_3</a>, <a class="el" href="hc__sr04_8c_source.html#l00034">HcSr04Init()</a>, <a class="el" href="lcditse0803_8c_source.html#l00037">LcdItsE0803Init()</a>, <a class="el" href="_guia__2___e_j3_8c_source.html#l00089">leds_task_handle</a>, <a class="el" href="led_8c_source.html#l00031">LedsInit()</a>, <a class="el" href="led_8c_source.html#l00105">LedsOffAll()</a>, <a class="el" href="_guia__2___e_j3_8c_source.html#l00183">LedsTask()</a>, <a class="el" href="_guia__2___e_j3_8c_source.html#l00236">LeerPuerto()</a>, <a class="el" href="_guia__2___e_j3_8c_source.html#l00088">medir_task_handle</a>, <a class="el" href="_guia__2___e_j3_8c_source.html#l00174">MedirTask()</a>, <a class="el" href="_guia__2___e_j3_8c_source.html#l00091">mostrar_task_handle</a>, <a class="el" href="_guia__2___e_j3_8c_source.html#l00255">MostrarTask()</a>, <a class="el" href="ili9341_8c_source.html#l00042">NULL</a>, <a class="el" href="uart__mcu_8h_source.html#l00039">serial_config_t::port</a>, <a class="el" href="switch_8h_source.html#l00032">SWITCH_1</a>, <a class="el" href="switch_8h_source.html#l00033">SWITCH_2</a>, <a class="el" href="switch_8c_source.html#l00047">SwitchActivInt()</a>, <a class="el" href="switch_8c_source.html#l00029">SwitchesInit()</a>, <a class="el" href="timer__mcu_8h_source.html#l00040">timer_config_t::timer</a>, <a class="el" href="timer__mcu_8h_source.html#l00032">TIMER_A</a>, <a class="el" href="timer__mcu_8c_source.html#l00055">TimerInit()</a>, <a class="el" href="timer__mcu_8c_source.html#l00110">TimerStart()</a>, <a class="el" href="uart__mcu_8h_source.html#l00032">UART_PC</a> y <a class="el" href="uart__mcu_8c_source.html#l00107">UartInit()</a>.</p>
+
+</div>
+</div>
+<a id="a489b98844afc67234aebca9f6a22b712" name="a489b98844afc67234aebca9f6a22b712"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a489b98844afc67234aebca9f6a22b712">&#9670;&#160;</a></span>CambiarEstado()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void CambiarEstado </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Si le paso 'O' prende el display o lo apaga.. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname"></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>return </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_guia__2___e_j3_8c_source.html#l00228">228</a> del archivo <a class="el" href="_guia__2___e_j3_8c_source.html">Guia_2_EJ3.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_guia__2___e_j3_8c_source.html#l00080">on</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_guia__2___e_j3_8c_source.html#l00268">app_main()</a> y <a class="el" href="_guia__2___e_j3_8c_source.html#l00236">LeerPuerto()</a>.</p>
+
+</div>
+</div>
+<a id="a076f555923cd9f68053c800969001e4b" name="a076f555923cd9f68053c800969001e4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a076f555923cd9f68053c800969001e4b">&#9670;&#160;</a></span>Congelar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Congelar </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Si se pasa H por consola deja fijo ese valor que se ve por display, hasta que se vuelva a apretar H. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname"></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>return </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_guia__2___e_j3_8c_source.html#l00232">232</a> del archivo <a class="el" href="_guia__2___e_j3_8c_source.html">Guia_2_EJ3.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_guia__2___e_j3_8c_source.html#l00083">hold</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_guia__2___e_j3_8c_source.html#l00268">app_main()</a> y <a class="el" href="_guia__2___e_j3_8c_source.html#l00236">LeerPuerto()</a>.</p>
+
+</div>
+</div>
+<a id="a730d3623a47cb5d2867435231371f374" name="a730d3623a47cb5d2867435231371f374"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a730d3623a47cb5d2867435231371f374">&#9670;&#160;</a></span>DisplayTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void DisplayTask </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>pvParameter</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tarea que escribe en el display las distancias que mide si está en ON, o apaga el display si esta !ON. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">void</td><td>*pvParameter </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd></dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_guia__2___e_j3_8c_source.html#l00214">214</a> del archivo <a class="el" href="_guia__2___e_j3_8c_source.html">Guia_2_EJ3.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_guia__2___e_j3_8c_source.html#l00077">d</a>, <a class="el" href="_guia__2___e_j3_8c_source.html#l00083">hold</a>, <a class="el" href="lcditse0803_8c_source.html#l00087">LcdItsE0803Off()</a>, <a class="el" href="lcditse0803_8c_source.html#l00054">LcdItsE0803Write()</a> y <a class="el" href="_guia__2___e_j3_8c_source.html#l00080">on</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_guia__2___e_j3_8c_source.html#l00268">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="aee537cfc1a0c6ba3f1444c45883b6236" name="aee537cfc1a0c6ba3f1444c45883b6236"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee537cfc1a0c6ba3f1444c45883b6236">&#9670;&#160;</a></span>EnviarDatos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void EnviarDatos </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Le pasa a UART los datos que quiero mostrar en el monitor. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname"></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>return </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_guia__2___e_j3_8c_source.html#l00250">250</a> del archivo <a class="el" href="_guia__2___e_j3_8c_source.html">Guia_2_EJ3.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_guia__2___e_j3_8c_source.html#l00077">d</a>, <a class="el" href="uart__mcu_8h_source.html#l00032">UART_PC</a>, <a class="el" href="uart__mcu_8c_source.html#l00222">UartItoa()</a> y <a class="el" href="uart__mcu_8c_source.html#l00193">UartSendString()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_guia__2___e_j3_8c_source.html#l00255">MostrarTask()</a>.</p>
+
+</div>
+</div>
+<a id="ad9278972624167025b4b2910afc9765e" name="ad9278972624167025b4b2910afc9765e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9278972624167025b4b2910afc9765e">&#9670;&#160;</a></span>FuncTimer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FuncTimer </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>pvParameter</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Notifica cada tarea cuando debe ser interrumpida. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">void</td><td>*pvParameter </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd></dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_guia__2___e_j3_8c_source.html#l00167">167</a> del archivo <a class="el" href="_guia__2___e_j3_8c_source.html">Guia_2_EJ3.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_guia__2___e_j3_8c_source.html#l00090">display_task_handle</a>, <a class="el" href="_guia__2___e_j3_8c_source.html#l00089">leds_task_handle</a>, <a class="el" href="_guia__2___e_j3_8c_source.html#l00088">medir_task_handle</a> y <a class="el" href="_guia__2___e_j3_8c_source.html#l00091">mostrar_task_handle</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_guia__2___e_j3_8c_source.html#l00268">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a5761bafaf553466f4242d7dfa4b138d0" name="a5761bafaf553466f4242d7dfa4b138d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5761bafaf553466f4242d7dfa4b138d0">&#9670;&#160;</a></span>LedsTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void LedsTask </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>pvParameter</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tarea para prender o apagar los leds dependiendo que distancia estè midiendo el sensor. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">void</td><td>*pvParameter </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd></dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_guia__2___e_j3_8c_source.html#l00183">183</a> del archivo <a class="el" href="_guia__2___e_j3_8c_source.html">Guia_2_EJ3.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_guia__2___e_j3_8c_source.html#l00077">d</a>, <a class="el" href="led_8h_source.html#l00034">LED_1</a>, <a class="el" href="led_8h_source.html#l00033">LED_2</a>, <a class="el" href="led_8h_source.html#l00032">LED_3</a>, <a class="el" href="led_8c_source.html#l00065">LedOff()</a>, <a class="el" href="led_8c_source.html#l00046">LedOn()</a>, <a class="el" href="led_8c_source.html#l00105">LedsOffAll()</a> y <a class="el" href="_guia__2___e_j3_8c_source.html#l00080">on</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_guia__2___e_j3_8c_source.html#l00268">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="ad565f7fde870f0e599f06c4f93c7ad94" name="ad565f7fde870f0e599f06c4f93c7ad94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad565f7fde870f0e599f06c4f93c7ad94">&#9670;&#160;</a></span>LeerPuerto()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void LeerPuerto </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Interpreta lo que recibe por consola y cambia el estado o congela el display. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname"></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>return </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_guia__2___e_j3_8c_source.html#l00236">236</a> del archivo <a class="el" href="_guia__2___e_j3_8c_source.html">Guia_2_EJ3.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_guia__2___e_j3_8c_source.html#l00228">CambiarEstado()</a>, <a class="el" href="_guia__2___e_j3_8c_source.html#l00232">Congelar()</a>, <a class="el" href="uart__mcu_8h_source.html#l00032">UART_PC</a> y <a class="el" href="uart__mcu_8c_source.html#l00142">UartReadByte()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_guia__2___e_j3_8c_source.html#l00268">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a877af9a16aaea9e4c38d9bd8276d2c9b" name="a877af9a16aaea9e4c38d9bd8276d2c9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a877af9a16aaea9e4c38d9bd8276d2c9b">&#9670;&#160;</a></span>MedirTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void MedirTask </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>pvParameter</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tarea para medir la distancia con el sensor, la guarda en centimetros en una variable. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">void</td><td>*pvParameter </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd></dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_guia__2___e_j3_8c_source.html#l00174">174</a> del archivo <a class="el" href="_guia__2___e_j3_8c_source.html">Guia_2_EJ3.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_guia__2___e_j3_8c_source.html#l00077">d</a>, <a class="el" href="hc__sr04_8c_source.html#l00045">HcSr04ReadDistanceInCentimeters()</a> y <a class="el" href="_guia__2___e_j3_8c_source.html#l00080">on</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_guia__2___e_j3_8c_source.html#l00268">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a7fbc3f5cfe58e32b3d35600981b26323" name="a7fbc3f5cfe58e32b3d35600981b26323"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fbc3f5cfe58e32b3d35600981b26323">&#9670;&#160;</a></span>MostrarTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void MostrarTask </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>pvParameter</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Es una tarea para mostrar por el monitor los datos que está sensando. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">void</td><td>*pvParameter </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd></dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_guia__2___e_j3_8c_source.html#l00255">255</a> del archivo <a class="el" href="_guia__2___e_j3_8c_source.html">Guia_2_EJ3.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_guia__2___e_j3_8c_source.html#l00250">EnviarDatos()</a>, <a class="el" href="_guia__2___e_j3_8c_source.html#l00083">hold</a> y <a class="el" href="_guia__2___e_j3_8c_source.html#l00080">on</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_guia__2___e_j3_8c_source.html#l00268">app_main()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de variables</h2>
+<a id="aaa0e9a03072c04ebe2d49f53bc7bc785" name="aaa0e9a03072c04ebe2d49f53bc7bc785"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa0e9a03072c04ebe2d49f53bc7bc785">&#9670;&#160;</a></span>d</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t d</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>La variable d almacena el valor que mide de distancia. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_guia__2___e_j3_8c_source.html#l00077">77</a> del archivo <a class="el" href="_guia__2___e_j3_8c_source.html">Guia_2_EJ3.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_guia__2___e_j3_8c_source.html#l00214">DisplayTask()</a>, <a class="el" href="_guia__2___e_j3_8c_source.html#l00250">EnviarDatos()</a>, <a class="el" href="_guia__2___e_j3_8c_source.html#l00183">LedsTask()</a> y <a class="el" href="_guia__2___e_j3_8c_source.html#l00174">MedirTask()</a>.</p>
+
+</div>
+</div>
+<a id="abaf073dd4f91187228bc62d1177a72e4" name="abaf073dd4f91187228bc62d1177a72e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abaf073dd4f91187228bc62d1177a72e4">&#9670;&#160;</a></span>display_task_handle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t display_task_handle = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_guia__2___e_j3_8c_source.html#l00090">90</a> del archivo <a class="el" href="_guia__2___e_j3_8c_source.html">Guia_2_EJ3.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_guia__2___e_j3_8c_source.html#l00268">app_main()</a> y <a class="el" href="_guia__2___e_j3_8c_source.html#l00167">FuncTimer()</a>.</p>
+
+</div>
+</div>
+<a id="af0129e079b57e897edf00f22cc25f3d4" name="af0129e079b57e897edf00f22cc25f3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0129e079b57e897edf00f22cc25f3d4">&#9670;&#160;</a></span>hold</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool hold</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Si es TRUE congela el valor que se muestra por display. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_guia__2___e_j3_8c_source.html#l00083">83</a> del archivo <a class="el" href="_guia__2___e_j3_8c_source.html">Guia_2_EJ3.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_guia__2___e_j3_8c_source.html#l00232">Congelar()</a>, <a class="el" href="_guia__2___e_j3_8c_source.html#l00214">DisplayTask()</a> y <a class="el" href="_guia__2___e_j3_8c_source.html#l00255">MostrarTask()</a>.</p>
+
+</div>
+</div>
+<a id="a23fa2e6a8b0cbaf464c822d101153441" name="a23fa2e6a8b0cbaf464c822d101153441"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23fa2e6a8b0cbaf464c822d101153441">&#9670;&#160;</a></span>leds_task_handle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t leds_task_handle = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_guia__2___e_j3_8c_source.html#l00089">89</a> del archivo <a class="el" href="_guia__2___e_j3_8c_source.html">Guia_2_EJ3.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_guia__2___e_j3_8c_source.html#l00268">app_main()</a> y <a class="el" href="_guia__2___e_j3_8c_source.html#l00167">FuncTimer()</a>.</p>
+
+</div>
+</div>
+<a id="a2b0cb40d7a31ce7e8b3f906fd55df312" name="a2b0cb40d7a31ce7e8b3f906fd55df312"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b0cb40d7a31ce7e8b3f906fd55df312">&#9670;&#160;</a></span>medir_task_handle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t medir_task_handle = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_guia__2___e_j3_8c_source.html#l00088">88</a> del archivo <a class="el" href="_guia__2___e_j3_8c_source.html">Guia_2_EJ3.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_guia__2___e_j3_8c_source.html#l00268">app_main()</a> y <a class="el" href="_guia__2___e_j3_8c_source.html#l00167">FuncTimer()</a>.</p>
+
+</div>
+</div>
+<a id="a1316d5b1a3e4d9dee5085faf3b582e40" name="a1316d5b1a3e4d9dee5085faf3b582e40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1316d5b1a3e4d9dee5085faf3b582e40">&#9670;&#160;</a></span>mostrar_task_handle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t mostrar_task_handle = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_guia__2___e_j3_8c_source.html#l00091">91</a> del archivo <a class="el" href="_guia__2___e_j3_8c_source.html">Guia_2_EJ3.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_guia__2___e_j3_8c_source.html#l00268">app_main()</a> y <a class="el" href="_guia__2___e_j3_8c_source.html#l00167">FuncTimer()</a>.</p>
+
+</div>
+</div>
+<a id="aaa928c9a62449f7946da1e32f66c70d2" name="aaa928c9a62449f7946da1e32f66c70d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa928c9a62449f7946da1e32f66c70d2">&#9670;&#160;</a></span>on</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool on</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Si es TRUE prende el display, si es FALSE lo apaga. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_guia__2___e_j3_8c_source.html#l00080">80</a> del archivo <a class="el" href="_guia__2___e_j3_8c_source.html">Guia_2_EJ3.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_guia__2___e_j3_8c_source.html#l00228">CambiarEstado()</a>, <a class="el" href="_guia__2___e_j3_8c_source.html#l00214">DisplayTask()</a>, <a class="el" href="_guia__2___e_j3_8c_source.html#l00183">LedsTask()</a>, <a class="el" href="_guia__2___e_j3_8c_source.html#l00174">MedirTask()</a> y <a class="el" href="_guia__2___e_j3_8c_source.html#l00255">MostrarTask()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_429d80758da54da73083af4edd40d0b3.html">projects</a></li><li class="navelem"><a class="el" href="dir_f0ace0999aa2fc77c301986769627a15.html">Guia_2_EJ3</a></li><li class="navelem"><a class="el" href="dir_0796ff2091993cae1db46a56a6df6da3.html">main</a></li><li class="navelem"><a class="el" href="_guia__2___e_j3_8c.html">Guia_2_EJ3.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

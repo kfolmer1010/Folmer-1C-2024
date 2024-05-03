@@ -1,10 +1,14 @@
-/*! @mainpage Guia_2_EJ1
+/*! @mainpage Guia_2_EJ3
  *
  * @section genDesc General Description
  *
- * This section describes how the program works.
+ *Este programa tiene como reutiliza lo que hicimos en el ejercicio 2, lee la distancia que mide un sensor y mostrarla por display, ademas 
+ *cambia los leds que estan prendidos o apagados dependiendo que valor tiene esa distancia, realiza determinadas acciones según apreto una 
+ *tecla u otra, todo a traves de tareas y a un determinado periodo, definido con un timer. La diferencia es que tambien se envian los datos 
+ *para poder ver las mediciones en un terminal de la PC.
  *
- * <a href="https://drive.google.com/...">Operation Example</a>
+ * 
+ *  <a href="https://drive.google.com/...">Operation Example</a>
  *
  * @section hardConn Hardware Connection
  *
@@ -21,7 +25,7 @@
  *
  * |   Date	    | Description                                    |
  * |:----------:|:-----------------------------------------------|
- * | 04/04/2023 | Document creation		                         |
+ * | 18/04/2024 | Document creation		                         |
  *
  * @author Karen Folmer (karenfolmer@hotmail.com)
  *
@@ -78,6 +82,7 @@ bool on;
 /**Si es TRUE congela el valor que se muestra por display.*/
 bool hold; 
 
+/**Periodo al que quiero que se realicen las tareas.*/
 #define CONFIG_BLINK_PERIOD 500000
 
 TaskHandle_t medir_task_handle = NULL;
@@ -287,7 +292,6 @@ void app_main(void){
 	TimerInit(&timer_1);
 
 	/// creación de las tareas que quiero ejecutar 
-
 	xTaskCreate(&MedirTask, "Medir", 512, NULL, 4, &medir_task_handle);
 	xTaskCreate(&LedsTask, "Leds", 512, NULL, 4, &leds_task_handle);
 	xTaskCreate(&DisplayTask, "Display", 512, NULL, 4, &display_task_handle);
