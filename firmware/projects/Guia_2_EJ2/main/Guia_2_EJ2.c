@@ -1,9 +1,12 @@
-/*! @mainpage Guia_2_EJ1
+/*! @mainpage Guia_2_EJ2
  *
  * @section genDesc General Description
+ *Este programa tiene como función leer la distancia que mide un sensor y mostrarla por display. Ademas cambia los leds que estan prendidos o
+ *apagados dependiendo que valor tiene esa distancia. Por otro lado tambien realiza determinadas acciones según apreto una tecla u otra.
+ *Todas estas funciones se realizan a traves de tareas y a un determinado periodo, definido con un timer.
  *
- * This section describes how the program works.
- *
+ * 
+ * 
  * <a href="https://drive.google.com/...">Operation Example</a>
  *
  * @section hardConn Hardware Connection
@@ -21,7 +24,7 @@
  *
  * |   Date	    | Description                                    |
  * |:----------:|:-----------------------------------------------|
- * | 04/04/2023 | Document creation		                         |
+ * | 11/04/2024 | Document creation		                         |
  *
  * @author Karen Folmer (karenfolmer@hotmail.com)
  *
@@ -49,6 +52,7 @@ bool on;
 /**Si es TRUE congela el valor que se muestra por display.*/
 bool hold; 
 
+/**Periodo en el que se realizaran las tareas.*/
 #define CONFIG_BLINK_PERIOD 1000000
 
 TaskHandle_t medir_task_handle = NULL;
@@ -92,7 +96,7 @@ void DisplayTask(void *pvParameter);
 
 /**
  * @fn static void CambiarEstado();
- * @brief Si le paso 'O' prende el display o lo apaga..
+ * @brief Si le paso 'O' prende el display o lo apaga.
  * @param[in] 
  * @return 
 */
@@ -100,7 +104,7 @@ void CambiarEstado();
 
 /**
  * @fn static void Congelar();
- * @brief Si se pasa H por consola deja fijo ese valor que se ve por display, hasta que se vuelva a apretar H.
+ * @brief Si se pasa H por consola deja fijo el valor que se veia por display, hasta que se vuelva a apretar H.
  * @param[in] 
  * @return 
 */
