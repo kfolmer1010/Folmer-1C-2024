@@ -1,8 +1,9 @@
 /*! @mainpage Guia_2_EJ1
  *
  * @section genDesc General Description
- *
- * This section describes how the program works.
+ *Este programa tiene como función leer la distancia que mide un sensor y mostrarla por display. Ademas cambia los leds que estan prendidos o
+ *apagados dependiendo que valor tiene esa distancia. Por otro lado tambien realiza determinadas acciones según apreto una tecla u otra.
+ * 
  *
  * <a href="https://drive.google.com/...">Operation Example</a>
  *
@@ -21,7 +22,7 @@
  *
  * |   Date	    | Description                                    |
  * |:----------:|:-----------------------------------------------|
- * | 04/04/2023 | Document creation		                         |
+ * | 04/04/2024 | Document creation		                         |
  *
  * @author Karen Folmer (karenfolmer@hotmail.com)
  *
@@ -48,8 +49,10 @@ bool on;
 /**Si es TRUE congela el valor que se muestra por display.*/
 bool hold; 
 
-
+/**Periodo al que quiero que se muestre la distancia.*/
 #define CONFIG_BLINK_PERIOD 1000
+
+/**Periodo al que quiero que lea lo que le mando por las teclas.*/
 #define CONFIG_BLINK_PERIOD_TECLAS 200
 
 /*==================[internal data definition]===============================*/
@@ -73,7 +76,7 @@ void ActualizarLed();
 
 /**
  * @fn void ActualizarDisplay();
- * @brief Escribe el valor que se ve por display.
+ * @brief Escribe un nuevo valor de d, medido por el sensor, que se ve por display.
  * @param[in]
  * @return
 */
@@ -89,11 +92,12 @@ void LeerTeclas();
 
 /**
  * @fn void Visualizar();
- * @brief Si ON es TRUE permite visualizar por display los valores que mide el sensor.
+ * @brief Actualiza los leds y el display dependiendo lo que mide el sensor, y si ON u HOLD son TRUE o FALSE.
  * @param[in]
  * @return
 */
 void Visualizar();
+
 /*==================[external functions definition]==========================*/
 void MostrarDistancia(){
 	while (1){
