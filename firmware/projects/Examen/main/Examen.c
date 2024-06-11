@@ -9,7 +9,7 @@
  *
  * @section hardConn Hardware Connection
  *
- * |    Peripheral  |   ESP32   	|
+ * |     ESP32      |   Peripheral 	|
  * |:--------------:|:--------------|
  * | 	Bomba agua 	| 	GPIO_15		|
  * | 	Bomba pHA 	| 	GPIO_16		|
