@@ -11,7 +11,12 @@
  *
  * |    Peripheral  |   ESP32   	|
  * |:--------------:|:--------------|
- * | 	PIN_X	 	| 	GPIO_X		|
+ * | 	Bomba agua 	| 	GPIO_15		|
+ * | 	Bomba pHA 	| 	GPIO_16		|
+ * | 	Bomba pHB 	| 	GPIO_17		|
+ * | Sensor humedad | 	GPIO_18		|
+ * | 	Sensor pH 	| 	CH1 		|
+ * 
  *
  *
  * @section changelog Changelog
