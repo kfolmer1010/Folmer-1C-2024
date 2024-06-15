@@ -59,8 +59,9 @@ uint16_t MQRead()
 	uint16_t rs=0;
 	uint16_t value=0;
 
-	for (i=0;i<READ_SAMPLE_TIMES;i++) {
-		AnalogInputRead(my_conversor.input, &value);
+	for (i=0;i<READ_SAMPLE_TIMES;i++) 
+	{
+		AnalogInputReadSingle(my_conversor.input, &value);
 		rs += MQResistanceCalculation(value);
    		DelayMs(READ_SAMPLE_INTERVAL);
 	}
