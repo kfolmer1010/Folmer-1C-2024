@@ -4,7 +4,7 @@
 
 #include "stdint.h"
 
-#define RO_CLEAN_AIR_FACTOR 9.5  //!< Valor de la relacion R0/RS en aire limpio.
+#define RO_CLEAN_AIR_FACTOR 10  //!< Valor de la relacion R0/RS en aire limpio.
 
 #define CALIBARAION_SAMPLE_TIMES     50    //!< Numero de vueltas de calibracion de R0.
 #define CALIBRATION_SAMPLE_INTERVAL  200   //!< Intervalo de tiempo para calibracion de R0.
