@@ -42,10 +42,12 @@
 #include "analog_io_mcu.h"
 #include "ble_mcu.h"
 #include "string.h"
-
+#include "switch.h"
 /*==================[macros and definitions]=================================*/
 /**Defino el periodo en el que se realizaran las interrupciones de las tareas. */
 #define CONFIG_BLINK_PERIOD 1000000
+/**Periodo al que quiero que lea lo que le mando por las teclas.*/
+#define CONFIG_BLINK_PERIOD_TECLAS 200
 /**Defino el GPIO donde conectare el servo. */
 #define GPIO_SERVO GPIO_19
 /**Defino el GPIO donde conectare el Buzzer. */
@@ -77,6 +79,10 @@ volatile bool alarma;
 uint16_t valor;
 /**Guarda el mensaje para mandar a la app. */
 char msg [50];
+/**guarda el valor de la tecla que se presiona */
+uint8_t teclas;
+/** */
+uint8_t data[10];
 /*==================[internal functions declaration]=========================*/
 /**
  * @fn static void AlarmaSoundTask()
@@ -120,12 +126,28 @@ void SendDataTask();
  */
 void FuncTimer(void* param);
 
+/**
+ * @fn void LeerTeclas();
+ * @brief Determina las acciones a realizar si se apreta una tecla u otra.
+ * 
+ */
+void LeerTeclas();
+
+/**
+ * @fn void ReadData(uint8_t * data, uint8_t length)
+ * @brief Lee la información que le paso por la app para prender o apagar la alarma.
+ * @param uint8_t * data 
+ * @param uint8_t length
+
+ */
+void ReadData(char * data, uint8_t length);
+
 /*==================[external functions definition]==========================*/
 static void AlarmaSoundTask()
 {
 	while(true)
 	{
-		if(conc_alcohol>200)
+		if(conc_alcohol>200 && alarma == true)
 		{
 			GPIOOn(GPIO_BUZZER);
 			BuzzerOn();
@@ -161,7 +183,6 @@ void ReadValueTask()
 			tapaOpen = true;
 			TapaMove();
 			alarma = false;
-
 		}
 		else if(conc_alcohol>200 && valor>200)
 		{
@@ -204,10 +225,38 @@ void SendDataTask()
 	}	
 } 
 
+void ReadData(char * data, uint8_t length)
+{
+    switch(data[0])
+	{
+        case 'A':
+            alarma = true;
+            break;
+        case 'a':
+            alarma = false;
+            break;
+    }
+}
+
 void FuncTimer(void* param)
 {
 	vTaskNotifyGiveFromISR(readvalue_task_handle, pdFALSE);
 	vTaskNotifyGiveFromISR(senddata_task_handle, pdFALSE);
+}
+
+void LeerTeclas()
+{
+	while(1)
+	{
+     	teclas  = SwitchesRead();
+     	switch(teclas)
+		{
+     		case SWITCH_1:
+				alarma = false;
+			break;
+		}
+		vTaskDelay(CONFIG_BLINK_PERIOD_TECLAS / portTICK_PERIOD_MS);
+	}
 }
 
 void app_main(void)
@@ -233,7 +282,7 @@ void app_main(void)
     ble_config_t ble_configuration = 
 	{
         .device_name = "EDU_KARU",
-		.func_p = NULL
+		.func_p = ReadData
     };
     BleInit(&ble_configuration);
 
