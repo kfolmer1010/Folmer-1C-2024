@@ -83,6 +83,12 @@ char msg [50];
 uint8_t teclas;
 /** */
 uint8_t data[10];
+/**Contador para ir acumulando las concentraciones de alcohol */
+float contador = 0;
+/**Me cuenta la cantidad de mediciones que se realizan, lo uso para sacar el promedio */
+int var= 0;
+/**On va a determinar si el programa va a correr o no */
+volatile bool on=false;
 /*==================[internal functions declaration]=========================*/
 /**
  * @fn static void AlarmaSoundTask()
@@ -93,7 +99,7 @@ static void AlarmaSoundTask();
 
 /**
  * @fn void TapaMove()
- * @brief Mueve la tapa con el servo cuando el umbral de alcohol es menor al umbral.
+ * @brief Mueve la tapa con el servo cuando el nivel de alcohol es menor al umbral.
  * 
  */
 void TapaMove();
@@ -120,6 +126,15 @@ void DetectorLlaveTask();
 void SendDataTask();
 
 /**
+ * @fn void ReadData(uint8_t * data, uint8_t length)
+ * @brief Lee la información que le paso por la app para prender o apagar la alarma.
+ * @param uint8_t * data Puntero a una matriz que almacenará los datos recibidos.
+ * @param uint8_t length representa la longitud de los datos recibidos.
+
+ */
+void ReadData(uint8_t * data, uint8_t length);
+
+/**
  * @fn void FuncTimer(void* param)
  * @brief Notifica a las tareas cuando deben ser interrumpidas.
  * @param void* param
@@ -128,19 +143,10 @@ void FuncTimer(void* param);
 
 /**
  * @fn void LeerTeclas();
- * @brief Determina las acciones a realizar si se apreta una tecla u otra.
+ * @brief Me sirve para apagar la alarma cuando apreto una tecla.
  * 
  */
 void LeerTeclas();
-
-/**
- * @fn void ReadData(uint8_t * data, uint8_t length)
- * @brief Lee la información que le paso por la app para prender o apagar la alarma.
- * @param uint8_t * data 
- * @param uint8_t length
-
- */
-void ReadData(char * data, uint8_t length);
 
 /*==================[external functions definition]==========================*/
 static void AlarmaSoundTask()
@@ -178,18 +184,30 @@ void ReadValueTask()
 		ulTaskNotifyTake(pdTRUE, portMAX_DELAY);   
 		AnalogInputReadSingle(CH2, &valor);
 		conc_alcohol = MQGetPercentage(MQRead()/Ro);
-		if(conc_alcohol<=200 && valor>200)
+		if(valor>200&&on==true)
 		{
-			tapaOpen = true;
-			TapaMove();
-			alarma = false;
+			if(conc_alcohol<=200)
+			{
+				tapaOpen = true;
+				TapaMove();
+				alarma = false;
+				
+			}
+			else if(conc_alcohol>200)
+			{
+				tapaOpen = false;
+				TapaMove();
+				alarma = true;			
+				
+			}
+			contador += conc_alcohol;
+			var ++;
 		}
-		else if(conc_alcohol>200 && valor>200)
+		else 
 		{
-			tapaOpen = false;
-			TapaMove();
-			alarma = true;
-		}
+			contador = 0;
+			var = 0;
+		}		
 	}
 }
 
@@ -215,24 +233,25 @@ void SendDataTask()
 {
 	while(true)
 	{
-		ulTaskNotifyTake(pdTRUE, portMAX_DELAY);   
-		if(valor>200)
+ 		vTaskDelay(3000 / portTICK_PERIOD_MS);
+ 		if(valor>200)
 		{
 			strcpy(msg,"");
-			sprintf(msg, "*aNivel de alcohol[ppm]: %f\n", conc_alcohol);
+			sprintf(msg, "*aPromedio de alcohol [ppm]: %f\n", contador/var);
 			BleSendString(msg);
 		}
 	}	
 } 
 
-void ReadData(char * data, uint8_t length)
+void ReadData(uint8_t * data, uint8_t length)
 {
     switch(data[0])
 	{
-        case 'A':
-            alarma = true;
+		case 'A':
+            on =!on;
             break;
         case 'a':
+            on =!on;
             alarma = false;
             break;
     }
@@ -248,14 +267,17 @@ void LeerTeclas()
 {
 	while(1)
 	{
-     	teclas  = SwitchesRead();
-     	switch(teclas)
+		if (conc_alcohol>200)
 		{
-     		case SWITCH_1:
-				alarma = false;
-			break;
+			teclas  = SwitchesRead();
+     		switch(teclas)
+			{
+				case SWITCH_1:
+					alarma = false;
+				break;
+			}
+			vTaskDelay(CONFIG_BLINK_PERIOD_TECLAS / portTICK_PERIOD_MS);
 		}
-		vTaskDelay(CONFIG_BLINK_PERIOD_TECLAS / portTICK_PERIOD_MS);
 	}
 }
 
@@ -288,13 +310,12 @@ void app_main(void)
 
 	timer_config_t timer_1 = 
 	{
-			.timer = TIMER_A,
-			.period = CONFIG_BLINK_PERIOD,
-			.func_p = FuncTimer,
-			.param_p = NULL
+		.timer = TIMER_A,
+		.period = CONFIG_BLINK_PERIOD,
+		.func_p = FuncTimer,
+		.param_p = NULL
 	};
 	TimerInit(&timer_1);
-
 
 	MQInit();
 	Ro = MQCalibration();
