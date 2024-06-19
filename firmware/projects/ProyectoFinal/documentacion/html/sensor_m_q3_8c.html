@@ -1,0 +1,321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Proyecto Final: Referencia del archivo C:/Users/Karu/Repositorios/Folmer-1C-2024/firmware/drivers/devices/src/sensorMQ3.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="fiuner.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Proyecto Final<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Trabajo integrador de la materia. Consiste en un alcoholímetro que mide el nivel de alcohol en ppm.La idea de este trabajo es poner en práctica todo lo desarrollado durante el cuatrimestre.</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('sensor_m_q3_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funciones</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle"><div class="title">Referencia del archivo sensorMQ3.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="sensor_m_q3_8h_source.html">sensorMQ3.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="analog__io__mcu_8h_source.html">analog_io_mcu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="delay__mcu_8h_source.html">delay_mcu.h</a>&quot;</code><br />
+<code>#include &quot;math.h&quot;</code><br />
+</div>
+<p><a href="sensor_m_q3_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:ad01d45da9fa87c7cb893127a1371caec" id="r_ad01d45da9fa87c7cb893127a1371caec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad01d45da9fa87c7cb893127a1371caec">MQInit</a> ()</td></tr>
+<tr class="memdesc:ad01d45da9fa87c7cb893127a1371caec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa el sensor MQ3.  <br /></td></tr>
+<tr class="separator:ad01d45da9fa87c7cb893127a1371caec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b2ab8c198032c27693e717a10e00e88" id="r_a3b2ab8c198032c27693e717a10e00e88"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b2ab8c198032c27693e717a10e00e88">MQResistanceCalculation</a> (uint16_t raw_adc)</td></tr>
+<tr class="separator:a3b2ab8c198032c27693e717a10e00e88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac30df98f35e97c7f5c3d2cd0a2201886" id="r_ac30df98f35e97c7f5c3d2cd0a2201886"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac30df98f35e97c7f5c3d2cd0a2201886">MQCalibration</a> ()</td></tr>
+<tr class="memdesc:ac30df98f35e97c7f5c3d2cd0a2201886"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calibra la resistencia R0.  <br /></td></tr>
+<tr class="separator:ac30df98f35e97c7f5c3d2cd0a2201886"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86a029fdaca2f26014e7dbf75e08f5f3" id="r_a86a029fdaca2f26014e7dbf75e08f5f3"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86a029fdaca2f26014e7dbf75e08f5f3">MQRead</a> ()</td></tr>
+<tr class="memdesc:a86a029fdaca2f26014e7dbf75e08f5f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lee el valor de la resistencia RS.  <br /></td></tr>
+<tr class="separator:a86a029fdaca2f26014e7dbf75e08f5f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3236406cb4c680e7383eb014c6c99b70" id="r_a3236406cb4c680e7383eb014c6c99b70"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3236406cb4c680e7383eb014c6c99b70">MQGetPercentage</a> (uint16_t rs_ro_ratio)</td></tr>
+<tr class="separator:a3236406cb4c680e7383eb014c6c99b70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:aa8887adea22ba32df7b2bc8d1713ee26" id="r_aa8887adea22ba32df7b2bc8d1713ee26"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8887adea22ba32df7b2bc8d1713ee26">concAlcoholCurve</a> [3] = {1.74,0.36,-0.65}</td></tr>
+<tr class="memdesc:aa8887adea22ba32df7b2bc8d1713ee26"><td class="mdescLeft">&#160;</td><td class="mdescRight">arreglo caracteristico de la curva del gas de alcohol, formato {x,y,pendiente}  <br /></td></tr>
+<tr class="separator:aa8887adea22ba32df7b2bc8d1713ee26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa79b6d0f81008df07669476fa5cb2580" id="r_aa79b6d0f81008df07669476fa5cb2580"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structanalog__input__config__t.html">analog_input_config_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa79b6d0f81008df07669476fa5cb2580">my_conversor</a></td></tr>
+<tr class="separator:aa79b6d0f81008df07669476fa5cb2580"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentación de funciones</h2>
+<a id="ac30df98f35e97c7f5c3d2cd0a2201886" name="ac30df98f35e97c7f5c3d2cd0a2201886"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac30df98f35e97c7f5c3d2cd0a2201886">&#9670;&#160;</a></span>MQCalibration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t MQCalibration </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calibra la resistencia R0. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Entero de 16 bits </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="sensor_m_q3_8c_source.html#l00033">33</a> del archivo <a class="el" href="sensor_m_q3_8c_source.html">sensorMQ3.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="analog__io__mcu_8c_source.html#l00105">AnalogInputReadSingle()</a>, <a class="el" href="sensor_m_q3_8h_source.html#l00009">CALIBARAION_SAMPLE_TIMES</a>, <a class="el" href="sensor_m_q3_8h_source.html#l00010">CALIBRATION_SAMPLE_INTERVAL</a>, <a class="el" href="delay__mcu_8c_source.html#l00063">DelayMs()</a>, <a class="el" href="analog__io__mcu_8h_source.html#l00049">analog_input_config_t::input</a>, <a class="el" href="sensor_m_q3_8c_source.html#l00025">MQResistanceCalculation()</a>, <a class="el" href="sensor_m_q3_8c_source.html#l00010">my_conversor</a> y <a class="el" href="sensor_m_q3_8h_source.html#l00007">RO_CLEAN_AIR_FACTOR</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_final_8c_source.html#l00284">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a3236406cb4c680e7383eb014c6c99b70" name="a3236406cb4c680e7383eb014c6c99b70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3236406cb4c680e7383eb014c6c99b70">&#9670;&#160;</a></span>MQGetPercentage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MQGetPercentage </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>rs_ro_ratio</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="sensor_m_q3_8c_source.html#l00072">72</a> del archivo <a class="el" href="sensor_m_q3_8c_source.html">sensorMQ3.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="sensor_m_q3_8c_source.html#l00008">concAlcoholCurve</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_final_8c_source.html#l00180">ReadValueTask()</a>.</p>
+
+</div>
+</div>
+<a id="ad01d45da9fa87c7cb893127a1371caec" name="ad01d45da9fa87c7cb893127a1371caec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad01d45da9fa87c7cb893127a1371caec">&#9670;&#160;</a></span>MQInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MQInit </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicializa el sensor MQ3. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>null </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="sensor_m_q3_8c_source.html#l00018">18</a> del archivo <a class="el" href="sensor_m_q3_8c_source.html">sensorMQ3.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="analog__io__mcu_8c_source.html#l00045">AnalogInputInit()</a>, <a class="el" href="analog__io__mcu_8c_source.html#l00095">AnalogOutputInit()</a> y <a class="el" href="sensor_m_q3_8c_source.html#l00010">my_conversor</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_final_8c_source.html#l00284">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a86a029fdaca2f26014e7dbf75e08f5f3" name="a86a029fdaca2f26014e7dbf75e08f5f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86a029fdaca2f26014e7dbf75e08f5f3">&#9670;&#160;</a></span>MQRead()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t MQRead </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lee el valor de la resistencia RS. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Entero de 16 bits </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="sensor_m_q3_8c_source.html#l00056">56</a> del archivo <a class="el" href="sensor_m_q3_8c_source.html">sensorMQ3.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="analog__io__mcu_8c_source.html#l00105">AnalogInputReadSingle()</a>, <a class="el" href="delay__mcu_8c_source.html#l00063">DelayMs()</a>, <a class="el" href="analog__io__mcu_8h_source.html#l00049">analog_input_config_t::input</a>, <a class="el" href="sensor_m_q3_8c_source.html#l00025">MQResistanceCalculation()</a>, <a class="el" href="sensor_m_q3_8c_source.html#l00010">my_conversor</a>, <a class="el" href="sensor_m_q3_8h_source.html#l00011">READ_SAMPLE_INTERVAL</a> y <a class="el" href="sensor_m_q3_8h_source.html#l00012">READ_SAMPLE_TIMES</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_final_8c_source.html#l00180">ReadValueTask()</a>.</p>
+
+</div>
+</div>
+<a id="a3b2ab8c198032c27693e717a10e00e88" name="a3b2ab8c198032c27693e717a10e00e88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b2ab8c198032c27693e717a10e00e88">&#9670;&#160;</a></span>MQResistanceCalculation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t MQResistanceCalculation </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>raw_adc</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="sensor_m_q3_8c_source.html#l00025">25</a> del archivo <a class="el" href="sensor_m_q3_8c_source.html">sensorMQ3.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="sensor_m_q3_8c_source.html#l00033">MQCalibration()</a> y <a class="el" href="sensor_m_q3_8c_source.html#l00056">MQRead()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de variables</h2>
+<a id="aa8887adea22ba32df7b2bc8d1713ee26" name="aa8887adea22ba32df7b2bc8d1713ee26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8887adea22ba32df7b2bc8d1713ee26">&#9670;&#160;</a></span>concAlcoholCurve</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float concAlcoholCurve[3] = {1.74,0.36,-0.65}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>arreglo caracteristico de la curva del gas de alcohol, formato {x,y,pendiente} </p>
+
+<p class="definition">Definición en la línea <a class="el" href="sensor_m_q3_8c_source.html#l00008">8</a> del archivo <a class="el" href="sensor_m_q3_8c_source.html">sensorMQ3.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="sensor_m_q3_8c_source.html#l00072">MQGetPercentage()</a>.</p>
+
+</div>
+</div>
+<a id="aa79b6d0f81008df07669476fa5cb2580" name="aa79b6d0f81008df07669476fa5cb2580"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa79b6d0f81008df07669476fa5cb2580">&#9670;&#160;</a></span>my_conversor</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structanalog__input__config__t.html">analog_input_config_t</a> my_conversor</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">        .input = <a class="code hl_enumvalue" href="group___analog___i_o.html#gga4ebdf50515e5d73c58c24fd1491770dca703cf81b7a9530ba8650e0ee2f29d68e">CH1</a>, </div>
+<div class="line">        .mode = <a class="code hl_enumvalue" href="group___analog___i_o.html#gga51acd785c14953090a3507d4fa8e5939a3b0a8cf9a7759ea8b7c9494eb7fb3dd4">ADC_SINGLE</a>,</div>
+<div class="line">        .func_p = <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>,</div>
+<div class="line">        .param_p = <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>,</div>
+<div class="line">        .sample_frec = 0</div>
+<div class="line">    }</div>
+<div class="ttc" id="agroup___analog___i_o_html_gga4ebdf50515e5d73c58c24fd1491770dca703cf81b7a9530ba8650e0ee2f29d68e"><div class="ttname"><a href="group___analog___i_o.html#gga4ebdf50515e5d73c58c24fd1491770dca703cf81b7a9530ba8650e0ee2f29d68e">CH1</a></div><div class="ttdeci">@ CH1</div><div class="ttdef"><b>Definition</b> <a href="analog__io__mcu_8h_source.html#l00032">analog_io_mcu.h:32</a></div></div>
+<div class="ttc" id="agroup___analog___i_o_html_gga51acd785c14953090a3507d4fa8e5939a3b0a8cf9a7759ea8b7c9494eb7fb3dd4"><div class="ttname"><a href="group___analog___i_o.html#gga51acd785c14953090a3507d4fa8e5939a3b0a8cf9a7759ea8b7c9494eb7fb3dd4">ADC_SINGLE</a></div><div class="ttdeci">@ ADC_SINGLE</div><div class="ttdef"><b>Definition</b> <a href="analog__io__mcu_8h_source.html#l00038">analog_io_mcu.h:38</a></div></div>
+<div class="ttc" id="aili9341_8c_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition</b> <a href="ili9341_8c_source.html#l00042">ili9341.c:42</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="sensor_m_q3_8c_source.html#l00010">10</a> del archivo <a class="el" href="sensor_m_q3_8c_source.html">sensorMQ3.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="sensor_m_q3_8c_source.html#l00033">MQCalibration()</a>, <a class="el" href="sensor_m_q3_8c_source.html#l00018">MQInit()</a> y <a class="el" href="sensor_m_q3_8c_source.html#l00056">MQRead()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_4774754e228843183aac8de48667fdde.html">drivers</a></li><li class="navelem"><a class="el" href="dir_01f3b75bad316aed7476a5f4cbb25c84.html">devices</a></li><li class="navelem"><a class="el" href="dir_2602097dce81420f4880be8af28b7cd8.html">src</a></li><li class="navelem"><a class="el" href="sensor_m_q3_8c.html">sensorMQ3.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

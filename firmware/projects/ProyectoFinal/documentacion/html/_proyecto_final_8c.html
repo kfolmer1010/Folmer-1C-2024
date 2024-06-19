@@ -1,0 +1,876 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Proyecto Final: Referencia del archivo C:/Users/Karu/Repositorios/Folmer-1C-2024/firmware/projects/ProyectoFinal/main/ProyectoFinal.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="fiuner.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Proyecto Final<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Trabajo integrador de la materia. Consiste en un alcoholímetro que mide el nivel de alcohol en ppm.La idea de este trabajo es poner en práctica todo lo desarrollado durante el cuatrimestre.</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_proyecto_final_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">defines</a> &#124;
+<a href="#func-members">Funciones</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle"><div class="title">Referencia del archivo ProyectoFinal.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &quot;freertos/FreeRTOS.h&quot;</code><br />
+<code>#include &quot;freertos/task.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="servo__sg90_8h_source.html">servo_sg90.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="sensor_m_q3_8h_source.html">sensorMQ3.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="gpio__mcu_8h_source.html">gpio_mcu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="timer__mcu_8h_source.html">timer_mcu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="buzzer_8h_source.html">buzzer.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="analog__io__mcu_8h_source.html">analog_io_mcu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ble__mcu_8h_source.html">ble_mcu.h</a>&quot;</code><br />
+<code>#include &quot;string.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="switch_8h_source.html">switch.h</a>&quot;</code><br />
+</div>
+<p><a href="_proyecto_final_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a3df1b4cad09974bfc68858fad7cdc054" id="r_a3df1b4cad09974bfc68858fad7cdc054"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3df1b4cad09974bfc68858fad7cdc054">CONFIG_BLINK_PERIOD</a>&#160;&#160;&#160;1000000</td></tr>
+<tr class="separator:a3df1b4cad09974bfc68858fad7cdc054"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2704101a9a3cb38aa0afc3370a27cf26" id="r_a2704101a9a3cb38aa0afc3370a27cf26"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2704101a9a3cb38aa0afc3370a27cf26">CONFIG_BLINK_PERIOD_TECLAS</a>&#160;&#160;&#160;200</td></tr>
+<tr class="separator:a2704101a9a3cb38aa0afc3370a27cf26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d83761e75e02b526fefd2bd6664ce10" id="r_a2d83761e75e02b526fefd2bd6664ce10"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d83761e75e02b526fefd2bd6664ce10">GPIO_SERVO</a>&#160;&#160;&#160;<a class="el" href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393aa2918c94bcf473e7ff31138b6333f847">GPIO_19</a></td></tr>
+<tr class="separator:a2d83761e75e02b526fefd2bd6664ce10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7987f207dd9c6d153beed96f092cb65" id="r_af7987f207dd9c6d153beed96f092cb65"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af7987f207dd9c6d153beed96f092cb65">GPIO_BUZZER</a>&#160;&#160;&#160;<a class="el" href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393a32ff7e9a2f00d396ff2b2b62af571d7c">GPIO_21</a></td></tr>
+<tr class="separator:af7987f207dd9c6d153beed96f092cb65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a011490384dcf609dab7089fadf2d828c" id="r_a011490384dcf609dab7089fadf2d828c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a011490384dcf609dab7089fadf2d828c">GPIO_DETECTOR</a>&#160;&#160;&#160;<a class="el" href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393a426d08ab85ab3aebbb53eed1a32dfb71">GPIO_3</a></td></tr>
+<tr class="separator:a011490384dcf609dab7089fadf2d828c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a60fa30f27c5756dbf22c5a09a77ee79d" id="r_a60fa30f27c5756dbf22c5a09a77ee79d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60fa30f27c5756dbf22c5a09a77ee79d">AlarmaSoundTask</a> ()</td></tr>
+<tr class="memdesc:a60fa30f27c5756dbf22c5a09a77ee79d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Es una tarea que activa una alarma cada vez que se supera el umbral de alcohol.  <br /></td></tr>
+<tr class="separator:a60fa30f27c5756dbf22c5a09a77ee79d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abaafc1db41598bc78999c64106eb6e1f" id="r_abaafc1db41598bc78999c64106eb6e1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abaafc1db41598bc78999c64106eb6e1f">TapaMove</a> ()</td></tr>
+<tr class="memdesc:abaafc1db41598bc78999c64106eb6e1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mueve la tapa con el servo cuando el nivel de alcohol es menor al umbral.  <br /></td></tr>
+<tr class="separator:abaafc1db41598bc78999c64106eb6e1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad09fa94e962daf04c74ed79d2a96d909" id="r_ad09fa94e962daf04c74ed79d2a96d909"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad09fa94e962daf04c74ed79d2a96d909">ReadValueTask</a> ()</td></tr>
+<tr class="separator:ad09fa94e962daf04c74ed79d2a96d909"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e56b92849637fe9e4ec7514315141d0" id="r_a9e56b92849637fe9e4ec7514315141d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e56b92849637fe9e4ec7514315141d0">DetectorLlaveTask</a> ()</td></tr>
+<tr class="memdesc:a9e56b92849637fe9e4ec7514315141d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tarea para detectar si está puesta la llave o no, para saber si cerrar la tapa o no.  <br /></td></tr>
+<tr class="separator:a9e56b92849637fe9e4ec7514315141d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a028ab2134967720d9c01f67f558900" id="r_a0a028ab2134967720d9c01f67f558900"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a028ab2134967720d9c01f67f558900">SendDataTask</a> ()</td></tr>
+<tr class="memdesc:a0a028ab2134967720d9c01f67f558900"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le envía los datos de nivel de alcohol a la app.  <br /></td></tr>
+<tr class="separator:a0a028ab2134967720d9c01f67f558900"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a684ecf66239ab83fe2373f263a752a4c" id="r_a684ecf66239ab83fe2373f263a752a4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a684ecf66239ab83fe2373f263a752a4c">ReadData</a> (uint8_t *<a class="el" href="#a9bd08f5131c165d56c34cbf4cee8ea41">data</a>, uint8_t length)</td></tr>
+<tr class="memdesc:a684ecf66239ab83fe2373f263a752a4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lee la información que le paso por la app para prender o apagar la alarma.  <br /></td></tr>
+<tr class="separator:a684ecf66239ab83fe2373f263a752a4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9278972624167025b4b2910afc9765e" id="r_ad9278972624167025b4b2910afc9765e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9278972624167025b4b2910afc9765e">FuncTimer</a> (void *param)</td></tr>
+<tr class="memdesc:ad9278972624167025b4b2910afc9765e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifica a las tareas cuando deben ser interrumpidas.  <br /></td></tr>
+<tr class="separator:ad9278972624167025b4b2910afc9765e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa03324987efc21295fdef970f8c93480" id="r_aa03324987efc21295fdef970f8c93480"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa03324987efc21295fdef970f8c93480">LeerTeclas</a> ()</td></tr>
+<tr class="memdesc:aa03324987efc21295fdef970f8c93480"><td class="mdescLeft">&#160;</td><td class="mdescRight">Me sirve para apagar la alarma cuando apreto una tecla.  <br /></td></tr>
+<tr class="separator:aa03324987efc21295fdef970f8c93480"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a630544a7f0a2cc40d8a7fefab7e2fe70" id="r_a630544a7f0a2cc40d8a7fefab7e2fe70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a630544a7f0a2cc40d8a7fefab7e2fe70">app_main</a> (void)</td></tr>
+<tr class="separator:a630544a7f0a2cc40d8a7fefab7e2fe70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a25cef2126ec07f423c05eef8e40ab2d0" id="r_a25cef2126ec07f423c05eef8e40ab2d0"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a25cef2126ec07f423c05eef8e40ab2d0">detectorllave_task_handle</a> = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
+<tr class="separator:a25cef2126ec07f423c05eef8e40ab2d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bd47849254c708e390767c85f57ecf9" id="r_a0bd47849254c708e390767c85f57ecf9"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0bd47849254c708e390767c85f57ecf9">alarmasound_task_handle</a> = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
+<tr class="separator:a0bd47849254c708e390767c85f57ecf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade98a1c8003b6ec10e8d2b45bf3672f5" id="r_ade98a1c8003b6ec10e8d2b45bf3672f5"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade98a1c8003b6ec10e8d2b45bf3672f5">readvalue_task_handle</a> = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
+<tr class="separator:ade98a1c8003b6ec10e8d2b45bf3672f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f1eec543313f92181f8b1eeff9b9b39" id="r_a7f1eec543313f92181f8b1eeff9b9b39"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f1eec543313f92181f8b1eeff9b9b39">senddata_task_handle</a> = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
+<tr class="separator:a7f1eec543313f92181f8b1eeff9b9b39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af79bc5d12da0cb4d6a8dfe86ac016e44" id="r_af79bc5d12da0cb4d6a8dfe86ac016e44"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af79bc5d12da0cb4d6a8dfe86ac016e44">ANG_SERVO_INICIAL</a> = 0</td></tr>
+<tr class="separator:af79bc5d12da0cb4d6a8dfe86ac016e44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae05b64ba1d083a4a95c0ae69ca4e430" id="r_aae05b64ba1d083a4a95c0ae69ca4e430"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae05b64ba1d083a4a95c0ae69ca4e430">ANG_SERVO_FINAL</a> = 120</td></tr>
+<tr class="separator:aae05b64ba1d083a4a95c0ae69ca4e430"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a743ce6b0ec059dc84a34c73f1a72687a" id="r_a743ce6b0ec059dc84a34c73f1a72687a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a743ce6b0ec059dc84a34c73f1a72687a">conc_alcohol</a></td></tr>
+<tr class="separator:a743ce6b0ec059dc84a34c73f1a72687a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf137c6236fa4826c6cd64caf45165a3" id="r_abf137c6236fa4826c6cd64caf45165a3"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf137c6236fa4826c6cd64caf45165a3">Ro</a> = 0</td></tr>
+<tr class="separator:abf137c6236fa4826c6cd64caf45165a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c67558887172f1cf3458764cd252e54" id="r_a1c67558887172f1cf3458764cd252e54"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c67558887172f1cf3458764cd252e54">tapaOpen</a></td></tr>
+<tr class="separator:a1c67558887172f1cf3458764cd252e54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fcf2caf3c085cccb92f82c1030388de" id="r_a7fcf2caf3c085cccb92f82c1030388de"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7fcf2caf3c085cccb92f82c1030388de">alarma</a></td></tr>
+<tr class="separator:a7fcf2caf3c085cccb92f82c1030388de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6555bc6e0e12aed1d6d19dcd2128e508" id="r_a6555bc6e0e12aed1d6d19dcd2128e508"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6555bc6e0e12aed1d6d19dcd2128e508">valor</a></td></tr>
+<tr class="separator:a6555bc6e0e12aed1d6d19dcd2128e508"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4f3f55be5de649fd367081b9d1b4b0c" id="r_ae4f3f55be5de649fd367081b9d1b4b0c"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4f3f55be5de649fd367081b9d1b4b0c">msg</a> [50]</td></tr>
+<tr class="separator:ae4f3f55be5de649fd367081b9d1b4b0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50987b3d7e97ff3669bca28b29087ee2" id="r_a50987b3d7e97ff3669bca28b29087ee2"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50987b3d7e97ff3669bca28b29087ee2">teclas</a></td></tr>
+<tr class="separator:a50987b3d7e97ff3669bca28b29087ee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bd08f5131c165d56c34cbf4cee8ea41" id="r_a9bd08f5131c165d56c34cbf4cee8ea41"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9bd08f5131c165d56c34cbf4cee8ea41">data</a> [10]</td></tr>
+<tr class="separator:a9bd08f5131c165d56c34cbf4cee8ea41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af82ec271b90cbf9890e23f09e358fd76" id="r_af82ec271b90cbf9890e23f09e358fd76"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af82ec271b90cbf9890e23f09e358fd76">contador</a> = 0</td></tr>
+<tr class="separator:af82ec271b90cbf9890e23f09e358fd76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96c77f9f3a7baec84b9b8add26a31787" id="r_a96c77f9f3a7baec84b9b8add26a31787"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96c77f9f3a7baec84b9b8add26a31787">var</a> = 0</td></tr>
+<tr class="separator:a96c77f9f3a7baec84b9b8add26a31787"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a643fc634dd13a996bd5596e3e2197fb1" id="r_a643fc634dd13a996bd5596e3e2197fb1"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a643fc634dd13a996bd5596e3e2197fb1">on</a> =false</td></tr>
+<tr class="separator:a643fc634dd13a996bd5596e3e2197fb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentación de «define»</h2>
+<a id="a3df1b4cad09974bfc68858fad7cdc054" name="a3df1b4cad09974bfc68858fad7cdc054"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3df1b4cad09974bfc68858fad7cdc054">&#9670;&#160;</a></span>CONFIG_BLINK_PERIOD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_BLINK_PERIOD&#160;&#160;&#160;1000000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Defino el periodo en el que se realizaran las interrupciones de las tareas. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_final_8c_source.html#l00048">48</a> del archivo <a class="el" href="_proyecto_final_8c_source.html">ProyectoFinal.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_final_8c_source.html#l00284">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a2704101a9a3cb38aa0afc3370a27cf26" name="a2704101a9a3cb38aa0afc3370a27cf26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2704101a9a3cb38aa0afc3370a27cf26">&#9670;&#160;</a></span>CONFIG_BLINK_PERIOD_TECLAS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_BLINK_PERIOD_TECLAS&#160;&#160;&#160;200</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Periodo al que quiero que lea lo que le mando por las teclas. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_final_8c_source.html#l00050">50</a> del archivo <a class="el" href="_proyecto_final_8c_source.html">ProyectoFinal.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_final_8c_source.html#l00266">LeerTeclas()</a>.</p>
+
+</div>
+</div>
+<a id="af7987f207dd9c6d153beed96f092cb65" name="af7987f207dd9c6d153beed96f092cb65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7987f207dd9c6d153beed96f092cb65">&#9670;&#160;</a></span>GPIO_BUZZER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GPIO_BUZZER&#160;&#160;&#160;<a class="el" href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393a32ff7e9a2f00d396ff2b2b62af571d7c">GPIO_21</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Defino el GPIO donde conectare el Buzzer. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_final_8c_source.html#l00054">54</a> del archivo <a class="el" href="_proyecto_final_8c_source.html">ProyectoFinal.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_final_8c_source.html#l00152">AlarmaSoundTask()</a> y <a class="el" href="_proyecto_final_8c_source.html#l00284">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a011490384dcf609dab7089fadf2d828c" name="a011490384dcf609dab7089fadf2d828c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a011490384dcf609dab7089fadf2d828c">&#9670;&#160;</a></span>GPIO_DETECTOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GPIO_DETECTOR&#160;&#160;&#160;<a class="el" href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393a426d08ab85ab3aebbb53eed1a32dfb71">GPIO_3</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Defino el GPIO donde conectare el Detector de línea. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_final_8c_source.html#l00056">56</a> del archivo <a class="el" href="_proyecto_final_8c_source.html">ProyectoFinal.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_final_8c_source.html#l00284">app_main()</a> y <a class="el" href="_proyecto_final_8c_source.html#l00214">DetectorLlaveTask()</a>.</p>
+
+</div>
+</div>
+<a id="a2d83761e75e02b526fefd2bd6664ce10" name="a2d83761e75e02b526fefd2bd6664ce10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d83761e75e02b526fefd2bd6664ce10">&#9670;&#160;</a></span>GPIO_SERVO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GPIO_SERVO&#160;&#160;&#160;<a class="el" href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393aa2918c94bcf473e7ff31138b6333f847">GPIO_19</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Defino el GPIO donde conectare el servo. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_final_8c_source.html#l00052">52</a> del archivo <a class="el" href="_proyecto_final_8c_source.html">ProyectoFinal.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_final_8c_source.html#l00284">app_main()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de funciones</h2>
+<a id="a60fa30f27c5756dbf22c5a09a77ee79d" name="a60fa30f27c5756dbf22c5a09a77ee79d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60fa30f27c5756dbf22c5a09a77ee79d">&#9670;&#160;</a></span>AlarmaSoundTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void AlarmaSoundTask </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Es una tarea que activa una alarma cada vez que se supera el umbral de alcohol. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_final_8c_source.html#l00152">152</a> del archivo <a class="el" href="_proyecto_final_8c_source.html">ProyectoFinal.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_proyecto_final_8c_source.html#l00077">alarma</a>, <a class="el" href="buzzer_8c_source.html#l00053">BuzzerOff()</a>, <a class="el" href="buzzer_8c_source.html#l00049">BuzzerOn()</a>, <a class="el" href="buzzer_8c_source.html#l00057">BuzzerSetFrec()</a>, <a class="el" href="_proyecto_final_8c_source.html#l00071">conc_alcohol</a>, <a class="el" href="_proyecto_final_8c_source.html#l00054">GPIO_BUZZER</a> y <a class="el" href="gpio__mcu_8c_source.html#l00081">GPIOOn()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_final_8c_source.html#l00284">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a630544a7f0a2cc40d8a7fefab7e2fe70" name="a630544a7f0a2cc40d8a7fefab7e2fe70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a630544a7f0a2cc40d8a7fefab7e2fe70">&#9670;&#160;</a></span>app_main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void app_main </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_final_8c_source.html#l00284">284</a> del archivo <a class="el" href="_proyecto_final_8c_source.html">ProyectoFinal.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="analog__io__mcu_8h_source.html#l00038">ADC_SINGLE</a>, <a class="el" href="_proyecto_final_8c_source.html#l00060">alarmasound_task_handle</a>, <a class="el" href="_proyecto_final_8c_source.html#l00152">AlarmaSoundTask()</a>, <a class="el" href="analog__io__mcu_8c_source.html#l00045">AnalogInputInit()</a>, <a class="el" href="_proyecto_final_8c_source.html#l00067">ANG_SERVO_INICIAL</a>, <a class="el" href="ble__mcu_8c_source.html#l00452">BleInit()</a>, <a class="el" href="buzzer_8c_source.html#l00043">BuzzerInit()</a>, <a class="el" href="analog__io__mcu_8h_source.html#l00033">CH2</a>, <a class="el" href="_proyecto_final_8c_source.html#l00048">CONFIG_BLINK_PERIOD</a>, <a class="el" href="_proyecto_final_8c_source.html#l00058">detectorllave_task_handle</a>, <a class="el" href="_proyecto_final_8c_source.html#l00214">DetectorLlaveTask()</a>, <a class="el" href="ble__mcu_8h_source.html#l00044">ble_config_t::device_name</a>, <a class="el" href="_proyecto_final_8c_source.html#l00260">FuncTimer()</a>, <a class="el" href="_proyecto_final_8c_source.html#l00054">GPIO_BUZZER</a>, <a class="el" href="_proyecto_final_8c_source.html#l00056">GPIO_DETECTOR</a>, <a class="el" href="gpio__mcu_8h_source.html#l00043">GPIO_INPUT</a>, <a class="el" href="gpio__mcu_8h_source.html#l00044">GPIO_OUTPUT</a>, <a class="el" href="_proyecto_final_8c_source.html#l00052">GPIO_SERVO</a>, <a class="el" href="gpio__mcu_8c_source.html#l00067">GPIOInit()</a>, <a class="el" href="analog__io__mcu_8h_source.html#l00049">analog_input_config_t::input</a>, <a class="el" href="sensor_m_q3_8c_source.html#l00033">MQCalibration()</a>, <a class="el" href="sensor_m_q3_8c_source.html#l00018">MQInit()</a>, <a class="el" href="ili9341_8c_source.html#l00042">NULL</a>, <a class="el" href="_proyecto_final_8c_source.html#l00246">ReadData()</a>, <a class="el" href="_proyecto_final_8c_source.html#l00062">readvalue_task_handle</a>, <a class="el" href="_proyecto_final_8c_source.html#l00180">ReadValueTask()</a>, <a class="el" href="_proyecto_final_8c_source.html#l00073">Ro</a>, <a class="el" href="_proyecto_final_8c_source.html#l00064">senddata_task_handle</a>, <a class="el" href="_proyecto_final_8c_source.html#l00232">SendDataTask()</a>, <a class="el" href="servo__sg90_8h_source.html#l00032">SERVO_0</a>, <a class="el" href="servo__sg90_8c_source.html#l00033">ServoInit()</a>, <a class="el" href="servo__sg90_8c_source.html#l00051">ServoMove()</a>, <a class="el" href="timer__mcu_8h_source.html#l00040">timer_config_t::timer</a>, <a class="el" href="timer__mcu_8h_source.html#l00032">TIMER_A</a>, <a class="el" href="timer__mcu_8c_source.html#l00055">TimerInit()</a> y <a class="el" href="timer__mcu_8c_source.html#l00110">TimerStart()</a>.</p>
+
+</div>
+</div>
+<a id="a9e56b92849637fe9e4ec7514315141d0" name="a9e56b92849637fe9e4ec7514315141d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e56b92849637fe9e4ec7514315141d0">&#9670;&#160;</a></span>DetectorLlaveTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DetectorLlaveTask </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tarea para detectar si está puesta la llave o no, para saber si cerrar la tapa o no. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_final_8c_source.html#l00214">214</a> del archivo <a class="el" href="_proyecto_final_8c_source.html">ProyectoFinal.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_proyecto_final_8c_source.html#l00056">GPIO_DETECTOR</a>, <a class="el" href="gpio__mcu_8c_source.html#l00101">GPIORead()</a>, <a class="el" href="_proyecto_final_8c_source.html#l00168">TapaMove()</a> y <a class="el" href="_proyecto_final_8c_source.html#l00075">tapaOpen</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_final_8c_source.html#l00284">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="ad9278972624167025b4b2910afc9765e" name="ad9278972624167025b4b2910afc9765e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9278972624167025b4b2910afc9765e">&#9670;&#160;</a></span>FuncTimer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FuncTimer </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>param</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Notifica a las tareas cuando deben ser interrumpidas. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void*</td><td>param </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_final_8c_source.html#l00260">260</a> del archivo <a class="el" href="_proyecto_final_8c_source.html">ProyectoFinal.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_proyecto_final_8c_source.html#l00062">readvalue_task_handle</a> y <a class="el" href="_proyecto_final_8c_source.html#l00064">senddata_task_handle</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_final_8c_source.html#l00284">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="aa03324987efc21295fdef970f8c93480" name="aa03324987efc21295fdef970f8c93480"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa03324987efc21295fdef970f8c93480">&#9670;&#160;</a></span>LeerTeclas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LeerTeclas </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Me sirve para apagar la alarma cuando apreto una tecla. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_final_8c_source.html#l00266">266</a> del archivo <a class="el" href="_proyecto_final_8c_source.html">ProyectoFinal.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_proyecto_final_8c_source.html#l00077">alarma</a>, <a class="el" href="_proyecto_final_8c_source.html#l00071">conc_alcohol</a>, <a class="el" href="_proyecto_final_8c_source.html#l00050">CONFIG_BLINK_PERIOD_TECLAS</a>, <a class="el" href="switch_8h_source.html#l00032">SWITCH_1</a>, <a class="el" href="switch_8c_source.html#l00038">SwitchesRead()</a> y <a class="el" href="_proyecto_final_8c_source.html#l00083">teclas</a>.</p>
+
+</div>
+</div>
+<a id="a684ecf66239ab83fe2373f263a752a4c" name="a684ecf66239ab83fe2373f263a752a4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a684ecf66239ab83fe2373f263a752a4c">&#9670;&#160;</a></span>ReadData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ReadData </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>data</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lee la información que le paso por la app para prender o apagar la alarma. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uint8_t</td><td>* data Puntero a una matriz que almacenará los datos recibidos. </td></tr>
+    <tr><td class="paramname">uint8_t</td><td>length representa la longitud de los datos recibidos. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_final_8c_source.html#l00246">246</a> del archivo <a class="el" href="_proyecto_final_8c_source.html">ProyectoFinal.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_proyecto_final_8c_source.html#l00077">alarma</a>, <a class="el" href="_proyecto_final_8c_source.html#l00085">data</a> y <a class="el" href="_proyecto_final_8c_source.html#l00091">on</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_final_8c_source.html#l00284">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="ad09fa94e962daf04c74ed79d2a96d909" name="ad09fa94e962daf04c74ed79d2a96d909"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad09fa94e962daf04c74ed79d2a96d909">&#9670;&#160;</a></span>ReadValueTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ReadValueTask </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_final_8c_source.html#l00180">180</a> del archivo <a class="el" href="_proyecto_final_8c_source.html">ProyectoFinal.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_proyecto_final_8c_source.html#l00077">alarma</a>, <a class="el" href="analog__io__mcu_8c_source.html#l00105">AnalogInputReadSingle()</a>, <a class="el" href="analog__io__mcu_8h_source.html#l00033">CH2</a>, <a class="el" href="_proyecto_final_8c_source.html#l00071">conc_alcohol</a>, <a class="el" href="_proyecto_final_8c_source.html#l00087">contador</a>, <a class="el" href="sensor_m_q3_8c_source.html#l00072">MQGetPercentage()</a>, <a class="el" href="sensor_m_q3_8c_source.html#l00056">MQRead()</a>, <a class="el" href="_proyecto_final_8c_source.html#l00091">on</a>, <a class="el" href="_proyecto_final_8c_source.html#l00073">Ro</a>, <a class="el" href="_proyecto_final_8c_source.html#l00168">TapaMove()</a>, <a class="el" href="_proyecto_final_8c_source.html#l00075">tapaOpen</a>, <a class="el" href="_proyecto_final_8c_source.html#l00079">valor</a> y <a class="el" href="_proyecto_final_8c_source.html#l00089">var</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_final_8c_source.html#l00284">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a0a028ab2134967720d9c01f67f558900" name="a0a028ab2134967720d9c01f67f558900"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a028ab2134967720d9c01f67f558900">&#9670;&#160;</a></span>SendDataTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SendDataTask </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Le envía los datos de nivel de alcohol a la app. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_final_8c_source.html#l00232">232</a> del archivo <a class="el" href="_proyecto_final_8c_source.html">ProyectoFinal.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="ble__mcu_8c_source.html#l00544">BleSendString()</a>, <a class="el" href="_proyecto_final_8c_source.html#l00087">contador</a>, <a class="el" href="_proyecto_final_8c_source.html#l00081">msg</a>, <a class="el" href="_proyecto_final_8c_source.html#l00079">valor</a> y <a class="el" href="_proyecto_final_8c_source.html#l00089">var</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_final_8c_source.html#l00284">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="abaafc1db41598bc78999c64106eb6e1f" name="abaafc1db41598bc78999c64106eb6e1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abaafc1db41598bc78999c64106eb6e1f">&#9670;&#160;</a></span>TapaMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TapaMove </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mueve la tapa con el servo cuando el nivel de alcohol es menor al umbral. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_final_8c_source.html#l00168">168</a> del archivo <a class="el" href="_proyecto_final_8c_source.html">ProyectoFinal.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_proyecto_final_8c_source.html#l00069">ANG_SERVO_FINAL</a>, <a class="el" href="_proyecto_final_8c_source.html#l00067">ANG_SERVO_INICIAL</a>, <a class="el" href="servo__sg90_8h_source.html#l00032">SERVO_0</a>, <a class="el" href="servo__sg90_8c_source.html#l00051">ServoMove()</a> y <a class="el" href="_proyecto_final_8c_source.html#l00075">tapaOpen</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_final_8c_source.html#l00214">DetectorLlaveTask()</a> y <a class="el" href="_proyecto_final_8c_source.html#l00180">ReadValueTask()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de variables</h2>
+<a id="a7fcf2caf3c085cccb92f82c1030388de" name="a7fcf2caf3c085cccb92f82c1030388de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fcf2caf3c085cccb92f82c1030388de">&#9670;&#160;</a></span>alarma</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile bool alarma</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Cuando es true suena la alarma </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_final_8c_source.html#l00077">77</a> del archivo <a class="el" href="_proyecto_final_8c_source.html">ProyectoFinal.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_final_8c_source.html#l00152">AlarmaSoundTask()</a>, <a class="el" href="_proyecto_final_8c_source.html#l00266">LeerTeclas()</a>, <a class="el" href="_proyecto_final_8c_source.html#l00246">ReadData()</a> y <a class="el" href="_proyecto_final_8c_source.html#l00180">ReadValueTask()</a>.</p>
+
+</div>
+</div>
+<a id="a0bd47849254c708e390767c85f57ecf9" name="a0bd47849254c708e390767c85f57ecf9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bd47849254c708e390767c85f57ecf9">&#9670;&#160;</a></span>alarmasound_task_handle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t alarmasound_task_handle = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Declaro la tarea para hacer sonar la alarma </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_final_8c_source.html#l00060">60</a> del archivo <a class="el" href="_proyecto_final_8c_source.html">ProyectoFinal.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_final_8c_source.html#l00284">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="aae05b64ba1d083a4a95c0ae69ca4e430" name="aae05b64ba1d083a4a95c0ae69ca4e430"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae05b64ba1d083a4a95c0ae69ca4e430">&#9670;&#160;</a></span>ANG_SERVO_FINAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t ANG_SERVO_FINAL = 120</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Defino el angulo final, hasta donde el servo va a abrir la tapa. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_final_8c_source.html#l00069">69</a> del archivo <a class="el" href="_proyecto_final_8c_source.html">ProyectoFinal.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_final_8c_source.html#l00168">TapaMove()</a>.</p>
+
+</div>
+</div>
+<a id="af79bc5d12da0cb4d6a8dfe86ac016e44" name="af79bc5d12da0cb4d6a8dfe86ac016e44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af79bc5d12da0cb4d6a8dfe86ac016e44">&#9670;&#160;</a></span>ANG_SERVO_INICIAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t ANG_SERVO_INICIAL = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Defino el angulo inicial de la tapa que va a mover el servo. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_final_8c_source.html#l00067">67</a> del archivo <a class="el" href="_proyecto_final_8c_source.html">ProyectoFinal.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_final_8c_source.html#l00284">app_main()</a> y <a class="el" href="_proyecto_final_8c_source.html#l00168">TapaMove()</a>.</p>
+
+</div>
+</div>
+<a id="a743ce6b0ec059dc84a34c73f1a72687a" name="a743ce6b0ec059dc84a34c73f1a72687a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a743ce6b0ec059dc84a34c73f1a72687a">&#9670;&#160;</a></span>conc_alcohol</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float conc_alcohol</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Variable que almacena el nivel de alcohol en ppm. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_final_8c_source.html#l00071">71</a> del archivo <a class="el" href="_proyecto_final_8c_source.html">ProyectoFinal.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_final_8c_source.html#l00152">AlarmaSoundTask()</a>, <a class="el" href="_proyecto_final_8c_source.html#l00266">LeerTeclas()</a> y <a class="el" href="_proyecto_final_8c_source.html#l00180">ReadValueTask()</a>.</p>
+
+</div>
+</div>
+<a id="af82ec271b90cbf9890e23f09e358fd76" name="af82ec271b90cbf9890e23f09e358fd76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af82ec271b90cbf9890e23f09e358fd76">&#9670;&#160;</a></span>contador</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float contador = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Contador para ir acumulando las concentraciones de alcohol </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_final_8c_source.html#l00087">87</a> del archivo <a class="el" href="_proyecto_final_8c_source.html">ProyectoFinal.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_final_8c_source.html#l00180">ReadValueTask()</a> y <a class="el" href="_proyecto_final_8c_source.html#l00232">SendDataTask()</a>.</p>
+
+</div>
+</div>
+<a id="a9bd08f5131c165d56c34cbf4cee8ea41" name="a9bd08f5131c165d56c34cbf4cee8ea41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bd08f5131c165d56c34cbf4cee8ea41">&#9670;&#160;</a></span>data</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t data[10]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_final_8c_source.html#l00085">85</a> del archivo <a class="el" href="_proyecto_final_8c_source.html">ProyectoFinal.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ble__mcu_8c_source.html#l00557">BleSendBuffer()</a>, <a class="el" href="ble__mcu_8c_source.html#l00534">BleSendByte()</a>, <a class="el" href="i2c__mcu_8c_source.html#l00073">I2C_readBit()</a>, <a class="el" href="i2c__mcu_8c_source.html#l00091">I2C_readBits()</a>, <a class="el" href="i2c__mcu_8c_source.html#l00114">I2C_readByte()</a>, <a class="el" href="i2c__mcu_8c_source.html#l00126">I2C_readBytes()</a>, <a class="el" href="i2c__mcu_8c_source.html#l00260">I2C_readWord()</a>, <a class="el" href="i2c__mcu_8c_source.html#l00172">I2C_writeBit()</a>, <a class="el" href="i2c__mcu_8c_source.html#l00187">I2C_writeBits()</a>, <a class="el" href="i2c__mcu_8c_source.html#l00214">I2C_writeByte()</a>, <a class="el" href="i2c__mcu_8c_source.html#l00236">I2C_writeBytes()</a>, <a class="el" href="i2c__mcu_8c_source.html#l00146">I2C_writeWord()</a>, <a class="el" href="ili9341_8c_source.html#l00380">ILI9341DrawChar()</a>, <a class="el" href="mpu6050_8c_source.html#l02728">MPU6050_getFIFOBytes()</a>, <a class="el" href="mpu6050_8c_source.html#l00025">MPU6050_ReadRegister()</a>, <a class="el" href="mpu6050_8c_source.html#l02739">MPU6050_setFIFOByte()</a>, <a class="el" href="mpu6050_8c_source.html#l01155">MPU6050_setSlave4OutputByte()</a>, <a class="el" href="mpu6050_8c_source.html#l02118">MPU6050_setSlaveOutputByte()</a>, <a class="el" href="_proyecto_final_8c_source.html#l00246">ReadData()</a>, <a class="el" href="uart__mcu_8c_source.html#l00161">UartReadBuffer()</a>, <a class="el" href="uart__mcu_8c_source.html#l00142">UartReadByte()</a>, <a class="el" href="uart__mcu_8c_source.html#l00209">UartSendBuffer()</a>, <a class="el" href="uart__mcu_8c_source.html#l00180">UartSendByte()</a> y <a class="el" href="ili9341_8c_source.html#l00222">WriteLCD()</a>.</p>
+
+</div>
+</div>
+<a id="a25cef2126ec07f423c05eef8e40ab2d0" name="a25cef2126ec07f423c05eef8e40ab2d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25cef2126ec07f423c05eef8e40ab2d0">&#9670;&#160;</a></span>detectorllave_task_handle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t detectorllave_task_handle = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Declaro la tarea para detectar si la llave está puesta o no. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_final_8c_source.html#l00058">58</a> del archivo <a class="el" href="_proyecto_final_8c_source.html">ProyectoFinal.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_final_8c_source.html#l00284">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="ae4f3f55be5de649fd367081b9d1b4b0c" name="ae4f3f55be5de649fd367081b9d1b4b0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4f3f55be5de649fd367081b9d1b4b0c">&#9670;&#160;</a></span>msg</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char msg[50]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Guarda el mensaje para mandar a la app. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_final_8c_source.html#l00081">81</a> del archivo <a class="el" href="_proyecto_final_8c_source.html">ProyectoFinal.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ble__mcu_8c_source.html#l00544">BleSendString()</a>, <a class="el" href="_proyecto_final_8c_source.html#l00232">SendDataTask()</a> y <a class="el" href="uart__mcu_8c_source.html#l00193">UartSendString()</a>.</p>
+
+</div>
+</div>
+<a id="a643fc634dd13a996bd5596e3e2197fb1" name="a643fc634dd13a996bd5596e3e2197fb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a643fc634dd13a996bd5596e3e2197fb1">&#9670;&#160;</a></span>on</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile bool on =false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>On va a determinar si el programa va a correr o no </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_final_8c_source.html#l00091">91</a> del archivo <a class="el" href="_proyecto_final_8c_source.html">ProyectoFinal.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_final_8c_source.html#l00246">ReadData()</a> y <a class="el" href="_proyecto_final_8c_source.html#l00180">ReadValueTask()</a>.</p>
+
+</div>
+</div>
+<a id="ade98a1c8003b6ec10e8d2b45bf3672f5" name="ade98a1c8003b6ec10e8d2b45bf3672f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade98a1c8003b6ec10e8d2b45bf3672f5">&#9670;&#160;</a></span>readvalue_task_handle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t readvalue_task_handle = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Declaro la tarea para leer el valor de voltaje del ventilador y sensar el nivel de alcohol. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_final_8c_source.html#l00062">62</a> del archivo <a class="el" href="_proyecto_final_8c_source.html">ProyectoFinal.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_final_8c_source.html#l00284">app_main()</a> y <a class="el" href="_proyecto_final_8c_source.html#l00260">FuncTimer()</a>.</p>
+
+</div>
+</div>
+<a id="abf137c6236fa4826c6cd64caf45165a3" name="abf137c6236fa4826c6cd64caf45165a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf137c6236fa4826c6cd64caf45165a3">&#9670;&#160;</a></span>Ro</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t Ro = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Variable que se utiliza despues para calibrar Ro del sensor MQ-3. <br  />
+ </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_final_8c_source.html#l00073">73</a> del archivo <a class="el" href="_proyecto_final_8c_source.html">ProyectoFinal.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_final_8c_source.html#l00284">app_main()</a> y <a class="el" href="_proyecto_final_8c_source.html#l00180">ReadValueTask()</a>.</p>
+
+</div>
+</div>
+<a id="a7f1eec543313f92181f8b1eeff9b9b39" name="a7f1eec543313f92181f8b1eeff9b9b39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f1eec543313f92181f8b1eeff9b9b39">&#9670;&#160;</a></span>senddata_task_handle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t senddata_task_handle = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Declaro la tarea para mandarle la data a la app. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_final_8c_source.html#l00064">64</a> del archivo <a class="el" href="_proyecto_final_8c_source.html">ProyectoFinal.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_final_8c_source.html#l00284">app_main()</a> y <a class="el" href="_proyecto_final_8c_source.html#l00260">FuncTimer()</a>.</p>
+
+</div>
+</div>
+<a id="a1c67558887172f1cf3458764cd252e54" name="a1c67558887172f1cf3458764cd252e54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c67558887172f1cf3458764cd252e54">&#9670;&#160;</a></span>tapaOpen</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile bool tapaOpen</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Si tapaOpen sea true se abrirá la tapa. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_final_8c_source.html#l00075">75</a> del archivo <a class="el" href="_proyecto_final_8c_source.html">ProyectoFinal.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_final_8c_source.html#l00214">DetectorLlaveTask()</a>, <a class="el" href="_proyecto_final_8c_source.html#l00180">ReadValueTask()</a> y <a class="el" href="_proyecto_final_8c_source.html#l00168">TapaMove()</a>.</p>
+
+</div>
+</div>
+<a id="a50987b3d7e97ff3669bca28b29087ee2" name="a50987b3d7e97ff3669bca28b29087ee2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50987b3d7e97ff3669bca28b29087ee2">&#9670;&#160;</a></span>teclas</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t teclas</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>guarda el valor de la tecla que se presiona </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_final_8c_source.html#l00083">83</a> del archivo <a class="el" href="_proyecto_final_8c_source.html">ProyectoFinal.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_final_8c_source.html#l00266">LeerTeclas()</a>.</p>
+
+</div>
+</div>
+<a id="a6555bc6e0e12aed1d6d19dcd2128e508" name="a6555bc6e0e12aed1d6d19dcd2128e508"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6555bc6e0e12aed1d6d19dcd2128e508">&#9670;&#160;</a></span>valor</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t valor</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Almacena el valor de voltaje del ventilador. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_final_8c_source.html#l00079">79</a> del archivo <a class="el" href="_proyecto_final_8c_source.html">ProyectoFinal.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_final_8c_source.html#l00180">ReadValueTask()</a> y <a class="el" href="_proyecto_final_8c_source.html#l00232">SendDataTask()</a>.</p>
+
+</div>
+</div>
+<a id="a96c77f9f3a7baec84b9b8add26a31787" name="a96c77f9f3a7baec84b9b8add26a31787"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96c77f9f3a7baec84b9b8add26a31787">&#9670;&#160;</a></span>var</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int var = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Me cuenta la cantidad de mediciones que se realizan, lo uso para sacar el promedio </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_final_8c_source.html#l00089">89</a> del archivo <a class="el" href="_proyecto_final_8c_source.html">ProyectoFinal.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_final_8c_source.html#l00180">ReadValueTask()</a> y <a class="el" href="_proyecto_final_8c_source.html#l00232">SendDataTask()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_429d80758da54da73083af4edd40d0b3.html">projects</a></li><li class="navelem"><a class="el" href="dir_49cab978dd6222f95fec48dd18bcb29c.html">ProyectoFinal</a></li><li class="navelem"><a class="el" href="dir_0cd45db885baac9c0efb66acd875c4ba.html">main</a></li><li class="navelem"><a class="el" href="_proyecto_final_8c.html">ProyectoFinal.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

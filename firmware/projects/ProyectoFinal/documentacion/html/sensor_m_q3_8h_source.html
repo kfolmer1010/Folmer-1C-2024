@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Proyecto Final: Archivo de código fuente C:/Users/Karu/Repositorios/Folmer-1C-2024/firmware/drivers/devices/inc/sensorMQ3.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="fiuner.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Proyecto Final<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Trabajo integrador de la materia. Consiste en un alcoholímetro que mide el nivel de alcohol en ppm.La idea de este trabajo es poner en práctica todo lo desarrollado durante el cuatrimestre.</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('sensor_m_q3_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">sensorMQ3.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="sensor_m_q3_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef _SENSORMQ3_H_</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define _SENSORMQ3_H_</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;stdint.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="sensor_m_q3_8h.html#a8465aceea6ea793c19480fa4cc17771b">    7</a></span><span class="preprocessor">#define RO_CLEAN_AIR_FACTOR 10  </span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="sensor_m_q3_8h.html#acdf364a8925cc6b8b82e5e97ebad4bef">    9</a></span><span class="preprocessor">#define CALIBARAION_SAMPLE_TIMES     50    </span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="sensor_m_q3_8h.html#aa97de48a2e947c960c2d80a2a57adeb8">   10</a></span><span class="preprocessor">#define CALIBRATION_SAMPLE_INTERVAL  200   </span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="sensor_m_q3_8h.html#ad4499f7506f777fa96123c6f1006339e">   11</a></span><span class="preprocessor">#define READ_SAMPLE_INTERVAL         50    </span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="sensor_m_q3_8h.html#a663765dcef79a2d229a5c173c56e5839">   12</a></span><span class="preprocessor">#define READ_SAMPLE_TIMES            5     </span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keywordtype">void</span> <a class="code hl_function" href="sensor_m_q3_8h.html#aa8115ffa10f30ba82e93a9608aa77a94">MQInit</a>();</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>uint16_t <a class="code hl_function" href="sensor_m_q3_8h.html#a3b2ab8c198032c27693e717a10e00e88">MQResistanceCalculation</a>(uint16_t raw_adc);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>uint16_t <a class="code hl_function" href="sensor_m_q3_8h.html#a6b096fd636287f1ebfe57200a3ca00ea">MQCalibration</a>();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>uint16_t <a class="code hl_function" href="sensor_m_q3_8h.html#a7cf1929cedb4283e1ed6b15167abf35a">MQRead</a>();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keywordtype">float</span>  <a class="code hl_function" href="sensor_m_q3_8h.html#a3236406cb4c680e7383eb014c6c99b70">MQGetPercentage</a>(uint16_t rs_ro_ratio);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#endif </span><span class="comment">/* MODULES_LPC4337_M4_DRIVERS_DEVICES_INC_SENSORMQ2_H_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="asensor_m_q3_8h_html_a3236406cb4c680e7383eb014c6c99b70"><div class="ttname"><a href="sensor_m_q3_8h.html#a3236406cb4c680e7383eb014c6c99b70">MQGetPercentage</a></div><div class="ttdeci">float MQGetPercentage(uint16_t rs_ro_ratio)</div><div class="ttdef"><b>Definition</b> <a href="sensor_m_q3_8c_source.html#l00072">sensorMQ3.c:72</a></div></div>
+<div class="ttc" id="asensor_m_q3_8h_html_a3b2ab8c198032c27693e717a10e00e88"><div class="ttname"><a href="sensor_m_q3_8h.html#a3b2ab8c198032c27693e717a10e00e88">MQResistanceCalculation</a></div><div class="ttdeci">uint16_t MQResistanceCalculation(uint16_t raw_adc)</div><div class="ttdef"><b>Definition</b> <a href="sensor_m_q3_8c_source.html#l00025">sensorMQ3.c:25</a></div></div>
+<div class="ttc" id="asensor_m_q3_8h_html_a6b096fd636287f1ebfe57200a3ca00ea"><div class="ttname"><a href="sensor_m_q3_8h.html#a6b096fd636287f1ebfe57200a3ca00ea">MQCalibration</a></div><div class="ttdeci">uint16_t MQCalibration()</div><div class="ttdoc">Calibra la resistencia R0.</div><div class="ttdef"><b>Definition</b> <a href="sensor_m_q3_8c_source.html#l00033">sensorMQ3.c:33</a></div></div>
+<div class="ttc" id="asensor_m_q3_8h_html_a7cf1929cedb4283e1ed6b15167abf35a"><div class="ttname"><a href="sensor_m_q3_8h.html#a7cf1929cedb4283e1ed6b15167abf35a">MQRead</a></div><div class="ttdeci">uint16_t MQRead()</div><div class="ttdoc">Lee el valor de la resistencia RS.</div><div class="ttdef"><b>Definition</b> <a href="sensor_m_q3_8c_source.html#l00056">sensorMQ3.c:56</a></div></div>
+<div class="ttc" id="asensor_m_q3_8h_html_aa8115ffa10f30ba82e93a9608aa77a94"><div class="ttname"><a href="sensor_m_q3_8h.html#aa8115ffa10f30ba82e93a9608aa77a94">MQInit</a></div><div class="ttdeci">void MQInit()</div><div class="ttdoc">Inicializa el sensor MQ3.</div><div class="ttdef"><b>Definition</b> <a href="sensor_m_q3_8c_source.html#l00018">sensorMQ3.c:18</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_4774754e228843183aac8de48667fdde.html">drivers</a></li><li class="navelem"><a class="el" href="dir_01f3b75bad316aed7476a5f4cbb25c84.html">devices</a></li><li class="navelem"><a class="el" href="dir_ec09302fb0adc1632f5eb1743ad0d2a7.html">inc</a></li><li class="navelem"><a class="el" href="sensor_m_q3_8h.html">sensorMQ3.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>
