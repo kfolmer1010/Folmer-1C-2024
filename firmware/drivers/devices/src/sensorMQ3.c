@@ -5,7 +5,7 @@
 #include "delay_mcu.h"
 #include "math.h"
 
-float concAlcoholCurve[3]  =  {1.74,0.36,-0.65};   //!< arreglo caracteristico de la curva del gas licuado de petroleo. formato {x,y,pendiente}
+float concAlcoholCurve[3] = {1.74,0.36,-0.65};   //!< arreglo caracteristico de la curva del gas de alcohol, formato {x,y,pendiente}
 
 analog_input_config_t my_conversor = {
 		.input = CH1, //le paso el canal
