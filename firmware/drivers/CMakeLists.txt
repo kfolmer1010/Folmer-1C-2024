@@ -22,12 +22,17 @@ set(srcs
     "devices/src/servo_sg90.c"
     "devices/src/hx711.c"
     "devices/src/mpu6050.c"
+    "devices/src/sensorMQ3.c"
+    "microcontroller/src/ble_mcu.c"
+    "devices/src/buzzer.c"
+
     )
 
 # Always included headers
 set(includes "microcontroller/inc"
              "devices/inc")
 
+
 idf_component_register(SRCS ${srcs}
                        INCLUDE_DIRS ${includes}
-                       REQUIRES driver esp_adc)
+                       REQUIRES driver esp_adc nvs_flash bt)
